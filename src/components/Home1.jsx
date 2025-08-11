@@ -2,10 +2,11 @@ import React from 'react'
 import Button from './Button'
 import Available from './Available'
 import Image from 'next/image'
+import { ArrowDown, ArrowDownAZ, ChevronDown } from 'lucide-react'
 
 const Home1 = () => {
     return (
-        <div className='w-full relative bg-red-200 h-[60vh] flex flex-col justify-center items-center'>
+        <div className='w-full relative  h-[60vh] flex flex-col justify-center items-center'>
             <div className="absolute left-0 -top-[12%]">
                 <Image
                     src="/bg-khana1.svg"
@@ -31,7 +32,7 @@ const Home1 = () => {
                     }}
                 />
             </div>
-            <div className="flex relative flex-col items-center gap-7 w-[80%] h-fit bg-amber-200">
+            <div className="flex relative flex-col items-center gap-7 w-[80%] h-fit ">
 
 
 
@@ -42,7 +43,7 @@ const Home1 = () => {
                         width={100}
                         height={100}
                         style={{
-                            width: 'clamp(10rem,6vw,200rem)',
+                            width: 'clamp(5rem,9vw,200rem)',
                             height: "auto"
                         }}
                     />
@@ -55,7 +56,7 @@ const Home1 = () => {
                         width={100}
                         height={100}
                         style={{
-                            width: 'clamp(10rem,6vw,200rem)',
+                            width: 'clamp(5rem,9vw,200rem)',
                             height: "auto"
                         }}
                     />
@@ -79,6 +80,14 @@ const Home1 = () => {
 
                 <Available />
             </div>
+            <div className="border-4 absolute bottom-0 border-[#EC8A25]  rounded-full"
+            style={{
+                padding: 'clamp(0.5rem,0.5vw,200rem)',
+            }}
+            >
+
+                <ChevronDown color='#EC8A25' size={40}/>
+            </div>
 
 
 
@@ -86,4 +95,4 @@ const Home1 = () => {
     )
 }
 
-export default Home1
+export default Home1;
