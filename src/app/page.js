@@ -7,6 +7,8 @@ import Home5 from '@/components/Home5'
 import Home6 from '@/components/Home6'
 import Home7 from '@/components/Home7'
 import Home8 from '@/components/Home8'
+import Footer from '@/components/Footer'
+import Strips from '@/components/Strips'
 
 const Home = () => {
   return (
@@ -18,7 +20,9 @@ const Home = () => {
         <Home5 />
         <Home6 />
         <Home7 />
+        <Strips/>
         <Home8 />
+        <Footer />
     </div>
   )
 }
