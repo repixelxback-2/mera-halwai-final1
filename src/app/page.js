@@ -5,6 +5,7 @@ import Home2 from '@/components/Home2'
 import Home3 from '@/components/Home3'
 import Home5 from '@/components/Home5'
 import Home6 from '@/components/Home6'
+import Home7 from '@/components/Home7'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Home3 />
         <Home5 />
         <Home6 />
+        <Home7 />
     </div>
   )
 }

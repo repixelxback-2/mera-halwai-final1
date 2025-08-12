@@ -110,7 +110,7 @@ const Home3 = () => {
             className='w-full relative'
             style={{ height: '400vh' }} // Make container tall enough for scroll
         >
-            <div className='w-full h-screen flex justify-center sticky top-0'>
+            <div className='w-full overflow-hidden h-screen flex justify-center sticky top-0'>
                 <div className="w-[80%] absolute flex">
                     <Image
                         src="/branch.svg"
