@@ -10,7 +10,7 @@ const Home8 = () => {
 
             }}
         >
-            <div className="flex justify-center w-[80%] h-fit">
+            <div className="flex justify-center  w-[90%] h-fit">
                 <div className="flex flex-col justify-center gap-10 w-[50%]">
                     <div className="text-2xl sm:text-3xl leading-snug md:text-4xl pixel text-left text-[#8A3E1D]"
                     >
@@ -25,7 +25,7 @@ const Home8 = () => {
                     <Button text={"Let's Make You Happy"} bgcolor={"#8A3E1D"} />
                 </div>
 
-                <div className="w-[50%] flex items-center    h-full">
+                <div className="w-[40%] flex items-center    h-full">
                     <Image
                         alt='h'
                         src="/qr.svg"
