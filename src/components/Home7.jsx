@@ -11,17 +11,17 @@ const Home7 = () => {
         >
             <div className="flex flex-col gap-10 items-center w-[90%] h-full">
                 <div className="flex flex-col gap-2 w-full">
-                    <div className="text-[#FF0000] text-right text-xl inter font-medium w-full">
+                    <div className="text-[#FF0000] text-center md:text-right text-xl inter font-medium w-full">
                         Testimonials
                     </div>
-                    <div className="text-3xl w-full sm:text-5xl leading-snug md:text-5xl pixel text-right text-[#8A3E1D]"
+                    <div className="text-xl w-full sm:text-5xl leading-snug md:text-5xl pixel text-center md:text-right text-[#8A3E1D]"
                     >
                         Sweet words from happy customers
                     </div>
                 </div>
 
 
-                <div className="w-full justify-center grid grid-cols-3 items-center gap-5 relative h-[60%]">
+                <div className="w-full justify-center grid grid-row-3 md:grid-cols-3 items-center gap-5 relative h-[60%]">
 
                     <Image
                         src="/c1.svg"
