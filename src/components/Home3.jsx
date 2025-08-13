@@ -46,6 +46,13 @@ const Home3 = () => {
     const [currentDetail, setCurrentDetail] = useState(0)
 
     useEffect(() => {
+        // Add overflow hidden to body on mount to prevent horizontal scroll
+        const originalBodyOverflow = document.body.style.overflow
+        const originalHtmlOverflow = document.documentElement.style.overflowX
+        
+        document.body.style.overflowX = 'hidden'
+        document.documentElement.style.overflowX = 'hidden'
+
         const container = containerRef.current
         const sticky = stickyRef.current
 
@@ -58,33 +65,51 @@ const Home3 = () => {
             }
         })
 
-        // Create ScrollTrigger for sticky behavior and detail switching
-        ScrollTrigger.create({
-            trigger: container,
-            start: "top top",
-            end: "bottom bottom",
-            pin: sticky,
-            pinSpacing: false,
-            scrub: 1,
-            onUpdate: (self) => {
-                // Calculate which detail should be active based on scroll progress
-                const progress = self.progress
-                const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
+        // Use ScrollTrigger.batch for better performance and timing
+        const createScrollTrigger = () => {
+            ScrollTrigger.create({
+                trigger: container,
+                start: "top top",
+                end: "bottom bottom",
+                pin: sticky,
+                pinSpacing: false,
+                scrub: 1,
+                invalidateOnRefresh: true, // This helps with layout recalculations
+                onUpdate: (self) => {
+                    // Calculate which detail should be active based on scroll progress
+                    const progress = self.progress
+                    const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
 
-                if (newIndex !== currentDetail) {
-                    setCurrentDetail(newIndex)
+                    if (newIndex !== currentDetail) {
+                        setCurrentDetail(newIndex)
+                    }
+                },
+                onRefresh: () => {
+                    // Ensure overflow is maintained on refresh
+                    document.body.style.overflowX = 'hidden'
+                    document.documentElement.style.overflowX = 'hidden'
                 }
-            }
-        })
+            })
+        }
+
+        // Delay ScrollTrigger creation to allow layout to settle
+        const timeoutId = setTimeout(() => {
+            createScrollTrigger()
+            ScrollTrigger.refresh() // Force refresh after creation
+        }, 100)
 
         return () => {
+            clearTimeout(timeoutId)
             ScrollTrigger.getAll().forEach(trigger => {
                 if (trigger.vars.trigger === container) {
                     trigger.kill()
                 }
             })
+            // Restore original overflow values
+            document.body.style.overflow = originalBodyOverflow
+            document.documentElement.style.overflowX = originalHtmlOverflow
         }
-    }, [currentDetail])
+    }, [])
 
     // Animate detail changes
     useEffect(() => {
@@ -105,40 +130,39 @@ const Home3 = () => {
     return (
         <div
             ref={containerRef}
-            className='w-full overflow-hidden h-full md:h-[400vh] relative'
+            className='w-full h-full md:h-[400vh] relative overflow-x-hidden'
         >
             {/* Desktop View */}
             <div
                 ref={stickyRef}
-                className='w-full hidden overflow-hidden h-screen md:flex justify-center items-start relative'
+                className='w-full hidden h-screen md:flex justify-center items-start relative overflow-x-hidden'
             >
                 {/* Background Image - Full container size */}
-                <div className="absolute inset-0 w-[100%] h-[100%] flex justify-center items-start">
-
+                <div className="absolute inset-0 w-full h-full flex justify-center items-start overflow-hidden">
                     <Image
                         src="/branch.svg"
                         alt="home3"
                         width={100}
                         height={100}
-                        className='w-[80%] h-auto'
+                        className='w-[80%] h-auto max-w-none'
+                        priority // Add priority for initial load
                     />
                 </div>
 
                 <div className="flex w-[80%] max-w-7xl mx-auto px-4 lg:px-8 z-50 relative justify-end items-center h-[90%]">
-                    <div className="w-[50%]  h-fit ml-auto">
-                        <div className="flex h-full text-white flex-col gap-8 lg:gap-12 "
-
-                        style={{
-                            padding: "clamp(1rem,1vw,200rem) clamp(1rem,4vw,200rem) clamp(1rem,1vw,200rem) "
-
-                        }}
+                    <div className="w-[50%] h-fit ml-auto overflow-hidden">
+                        <div 
+                            className="flex h-full text-white flex-col gap-8 lg:gap-12 overflow-hidden"
+                            style={{
+                                padding: "clamp(1rem,1vw,200rem) clamp(1rem,4vw,200rem) clamp(1rem,1vw,200rem)"
+                            }}
                         >
                             <div className="text-2xl leading-snug lg:text-3xl xl:text-4xl pixel text-center lg:text-left text-[#ffffff]">
                                 How We Make Every Occasion Sweeter
                             </div>
 
                             {/* Content Section */}
-                            <div className="flex gap-4 lg:gap-5 justify-center lg:justify-start">
+                            <div className="flex gap-4 lg:gap-5 justify-center lg:justify-start overflow-hidden">
                                 <Image
                                     src="/point.svg"
                                     alt="home3"
@@ -146,9 +170,9 @@ const Home3 = () => {
                                     height={50}
                                     className='h-full w-auto flex-shrink-0'
                                 />
-                                <div className="flex gap-4 lg:gap-6 flex-col flex-1 min-w-0">
+                                <div className="flex gap-4 lg:gap-6 flex-col flex-1 min-w-0 overflow-hidden">
                                     {/* Dynamic detail content */}
-                                    <div className="flex justify-between  w-full gap-3 items-center">
+                                    <div className="flex justify-between w-full gap-3 items-center overflow-hidden">
                                         <Image
                                             src={Details[currentDetail].icon}
                                             alt="detail icon"
@@ -157,7 +181,7 @@ const Home3 = () => {
                                             className='h-10 lg:h-16 w-auto detail-icon flex-shrink-0'
                                         />
 
-                                        <div className="text-white text-lg w-[50%] lg:text-2xl xl:text-2xl font-semibold inter detail-title flex-1 px-2 lg:px-4 text-center lg:text-left">
+                                        <div className="text-white text-lg w-[50%] lg:text-2xl xl:text-2xl font-semibold inter detail-title flex-1 px-2 lg:px-4 text-center lg:text-left overflow-hidden">
                                             {Details[currentDetail].title}
                                         </div>
 
@@ -170,11 +194,11 @@ const Home3 = () => {
                                         />
                                     </div>
 
-                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc1 text-center lg:text-left">
+                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc1 text-center lg:text-left overflow-hidden">
                                         {Details[currentDetail].desc1}
                                     </div>
 
-                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc2 text-center lg:text-left">
+                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc2 text-center lg:text-left overflow-hidden">
                                         {Details[currentDetail].desc2}
                                     </div>
                                 </div>
@@ -189,10 +213,11 @@ const Home3 = () => {
                 </div>
             </div>
 
-            {/* Mobile View - Unchanged */}
-            <div className="flex w-full md:hidden relative h-fit">
+            {/* Mobile View */}
+            <div className="flex w-full md:hidden relative h-fit overflow-x-hidden">
                 <div className="w-full bg-black py-20">
-                    <div className="absolute w-full h-full bg-cover z-10 opacity-30"
+                    <div 
+                        className="absolute w-full h-full bg-cover z-10 opacity-30"
                         style={{
                             padding: "clamp(5rem,4vw,200rem) clamp(1rem,4vw,200rem)",
                             backgroundImage: "url('/mb.svg')",
@@ -200,10 +225,10 @@ const Home3 = () => {
                             backgroundPosition: "center",
                             backgroundColor: "rgba(0, 0, 0, 0.5)",
                         }}
-                    >
-                    </div>
+                    />
 
-                    <div className="flex flex-col z-50 relative items-center w-[100%] gap-12"
+                    <div 
+                        className="flex flex-col z-50 relative items-center w-full gap-12 overflow-x-hidden"
                         style={{
                             padding: "clamp(5rem,2vw,200rem) 0"
                         }}
@@ -213,26 +238,26 @@ const Home3 = () => {
                         </div>
 
                         {Details.map((detail, index) => (
-                            <div key={index} className="flex gap-5">
+                            <div key={index} className="flex gap-5 w-full max-w-full overflow-x-hidden">
                                 <Image
                                     src="/point.svg"
                                     alt="home3"
                                     width={50}
                                     height={50}
-                                    className='h-42 w-auto'
+                                    className='h-42 w-auto flex-shrink-0'
                                 />
-                                <div className="flex gap-6 flex-col">
-                                    <div className="flex justify-start gap-3">
-                                        <div className="flex gap-3">
+                                <div className="flex gap-6 flex-col flex-1 min-w-0 overflow-hidden">
+                                    <div className="flex justify-start gap-3 overflow-hidden">
+                                        <div className="flex gap-3 flex-1 min-w-0">
                                             <Image
                                                 src={detail.icon}
                                                 alt="detail icon"
                                                 width={40}
                                                 height={40}
-                                                className='h-10 w-auto'
+                                                className='h-10 w-auto flex-shrink-0'
                                             />
 
-                                            <div className="text-white text-sm font-semibold inter max-w-[35vw] leading-tight">
+                                            <div className="text-white text-sm font-semibold inter max-w-[35vw] leading-tight overflow-hidden">
                                                 {detail.title}
                                             </div>
                                         </div>
@@ -242,15 +267,15 @@ const Home3 = () => {
                                             alt="detail queue"
                                             width={36}
                                             height={36}
-                                            className='h-9 translate-x-5 w-auto'
+                                            className='h-9 translate-x-5 w-auto flex-shrink-0'
                                         />
                                     </div>
 
-                                    <div className="text-white w-72 inter italic text-sm">
+                                    <div className="text-white w-72 inter italic text-sm overflow-hidden">
                                         {detail.desc1}
                                     </div>
 
-                                    <div className="text-white w-72 inter italic text-sm">
+                                    <div className="text-white w-72 inter italic text-sm overflow-hidden">
                                         {detail.desc2}
                                     </div>
                                 </div>
