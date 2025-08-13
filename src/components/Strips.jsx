@@ -3,11 +3,15 @@ import React from 'react'
 
 const Strips = () => {
   return (
-    <div className="relative w-full pixel h-[30vh] overflow-hidden">
-      {/* Blurred Background Strip */}
-      <div className="absolute inset-0 opacity-30">
+    <div className="relative w-full pixel h-[35vh] no-scroll max-w-screen overflow-x-hidden"
+    style={{
+      ScrollbarWidth: 'none'
+    }}
+    
+    >
+      <div className="absolute  inset-0 -translate-y-2 md:-translate-y-20  opacity-75">
         <div className="strip-container blur-sm">
-          <div className="strip bg-[#EC8A25] text-white font-bold text-4xl py-0 px-8 whitespace-nowrap animate-slide-left transform -rotate-2">
+          <div className="strip  bg-[#EC8A25] text-white  text-lg  sm:text-2xl md:text-4xl py-0 px-8 whitespace-nowrap animate-slide-left transform -rotate-3">
             <span className="strip-text">
               BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • 
             </span>
@@ -20,7 +24,7 @@ const Strips = () => {
 
       <div className="absolute inset-0">
         <div className="strip-container">
-          <div className="strip bg-[#EC8A25] text-white font-bold text-4xl py-0 px-8 whitespace-nowrap animate-slide-right transform rotate-2 shadow-lg">
+          <div className="strip bg-[#EC8A25] text-white  text-lg  sm:text-2xl md:text-4xl py-0 px-8 whitespace-nowrap animate-slide-right transform rotate-2 shadow-lg">
             <span className="strip-text">
               BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • BECOME A VENDOR • WORK WITH US • 
             </span>
@@ -37,7 +41,7 @@ const Strips = () => {
       <style jsx>{`
         .strip-container {
           width: 200%;
-          height: 70px;
+          height: fit-content;
           position: relative;
           top: 50%;
           transform: translateY(-50%);
@@ -45,6 +49,7 @@ const Strips = () => {
 
         .strip {
           display: flex;
+          padding: clamp(0.5rem,0.75vw,100rem);
           align-items: center;
           height: 100%;
           width: 100%;

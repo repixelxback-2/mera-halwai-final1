@@ -7,6 +7,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+.no-scroll {
+  overflow: hidden;       /* Removes scrolling */
+  scrollbar-width: none;  /* Firefox: hide scrollbar */
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;          /* Chrome, Safari, Edge: hide scrollbar */
+}
 
 * {
   /* border: 1px solid red; */
