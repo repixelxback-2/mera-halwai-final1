@@ -7,7 +7,7 @@ const Button = ({text, bgcolor}) => {
         padding: 'clamp(0.5rem,0.5vw,200rem) clamp(0.5rem,1vw,200rem)',
 
        }}
-    className={` text-white inter text-md sm:text-lg md:text-xl font-bold w-fit rounded-xl `}>{text}</button>
+    className={` text-white inter text-xl sm:text-lg md:text-xl font-bold w-fit rounded-xl `}>{text}</button>
   )
 }
 

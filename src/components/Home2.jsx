@@ -5,9 +5,9 @@ import Button from './Button'
 
 const Home2 = () => {
     return (
-        <div className='w-full flex justify-end items-center flex-col h-[80vh]'>
+        <div className='w-full flex justify-end items-center flex-col md:h-[80vh] min-h-[80vh]'>
 
-            <div className="w-[90%] relative h-[90%] flex justify-between rounded-4xl bg-[#EC8A25]">
+            <div className="w-[90%] md:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
                 <div className="flex flex-col justify-between"
                     style={{
                         padding: "clamp(0.5rem,3vw,200rem) 0 clamp(0.5rem,3vw,200rem) clamp(0.5rem,6vw,200rem) "
@@ -16,10 +16,10 @@ const Home2 = () => {
                 >
 
 
-                    <div className="text-[#fff] text-left text-xl inter font-medium">
+                    <div className="text-[#fff] text-center md:text-left text-xl inter font-medium">
                         What is Mera Halwai
                     </div>
-                    <div className="text-2xl sm:text-3xl leading-snug md:text-4xl pixel text-left text-[#fff]"
+                    <div className="text-2xl sm:text-3xl leading-snug md:text-4xl pixel text-center md:text-left text-[#fff]"
                     >
                         The Smarter Way to{","} <br /> Sweeten Your Celebrations
                     </div>
@@ -52,6 +52,18 @@ const Home2 = () => {
                     className='h-full absolute right-0 w-auto'
                 />
             </div>
+            <div className=" md:hidden relative flex w-[95%] h-full">
+            <Image
+                    src="/mobile-app.svg"
+                    alt="hero"
+                    width={100}
+                    height={100}
+                    className='h-full w-full'
+                />
+                <div className="w-full absolute justify-center flex bottom-12">
+                    <Button text={"Get Started"} bgcolor={"#8A3E1D"} />
+                </div>
+                </div>
 
         </div>
     )

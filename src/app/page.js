@@ -16,12 +16,12 @@ const Home = () => {
         <Navbar />
         <Home1 />
         <Home2 />
-        <Home3 />
+        {/* <Home3 />
         <Home5 />
         <Home6 />
         <Home7 />
         <Strips/>
-        <Home8 />
+        <Home8 /> */}
         <Footer />
     </div>
   )
