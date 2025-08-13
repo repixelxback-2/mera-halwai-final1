@@ -3,8 +3,8 @@ import React from 'react'
 
 const Available = () => {
   return (
-    <div className='flex gap-4'>
-        <div className="text-black text-md sm:text-lg md:text-xl">
+    <div className='flex md:flex-row flex-col  gap-4'>
+        <div className="text-black text-center font-semibold md:text-left text-md sm:text-lg md:text-xl">
 Available On
         </div>
         <div className="flex gap-2">

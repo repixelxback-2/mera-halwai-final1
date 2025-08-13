@@ -131,7 +131,7 @@ const Home3 = () => {
                                 padding: "clamp(1rem,4vw,200rem)"
                             }}
                         >
-                            <div className="text-2xl leading-snug sm:text-3xl md:text-5xl pixel text-left text-[#fff]">
+                            <div className="text-2xl leading-snug sm:text-3xl md:text-4xl pixel text-left text-[#fff]">
                                 How We Make Every Occasion Sweeter
                             </div>
 
