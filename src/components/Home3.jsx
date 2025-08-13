@@ -152,7 +152,7 @@ const Home3 = () => {
                 <div className="flex w-[80%] max-w-7xl mx-auto px-4 lg:px-8 z-50 relative justify-end items-center h-[90%]">
                     <div className="w-[50%] h-fit ml-auto overflow-hidden">
                         <div 
-                            className="flex h-full text-white flex-col gap-8 lg:gap-12 overflow-hidden"
+                            className="flex h-full text-white flex-col gap-8 lg:gap-20 overflow-hidden"
                             style={{
                                 padding: "clamp(1rem,1vw,200rem) clamp(1rem,4vw,200rem) clamp(1rem,1vw,200rem)"
                             }}
@@ -168,7 +168,7 @@ const Home3 = () => {
                                     alt="home3"
                                     width={50}
                                     height={50}
-                                    className='h-full w-auto flex-shrink-0'
+                                    className='h-[60%] w-auto flex-shrink-0'
                                 />
                                 <div className="flex gap-4 lg:gap-6 flex-col flex-1 min-w-0 overflow-hidden">
                                     {/* Dynamic detail content */}
