@@ -10,21 +10,19 @@ import Home8 from '@/components/Home8'
 import Footer from '@/components/Footer'
 import Strips from '@/components/Strips'
 
-const Home = () => {
-  return (
-    <div className='w-full h-full min-h-screen'>
-        <Navbar />
-        <Home1 />
-        <Home2 />
-        {/* <Home3 />
-        <Home5 />
-        <Home6 />
-        <Home7 />
-        <Strips/>
-        <Home8 /> */}
-        <Footer />
-    </div>
-  )
-}
+const Home = () => (
+  <div className='w-full h-full min-h-screen'>
+    <Navbar />
+    <Home1 />
+    <Home2 />
+    <Home3 />
+    <Home5 />
+    {/* <Home6 /> */}
+    {/* <Home7 /> */}
+    {/* <Strips /> */}
+    {/* <Home8 /> */}
+    <Footer />
+  </div>
+)
 
 export default Home

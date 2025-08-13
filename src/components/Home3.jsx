@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Button from './Button'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -42,95 +42,89 @@ const Details = [
 
 const Home3 = () => {
     const containerRef = useRef(null)
-    const detailsRef = useRef(null)
-    const currentDetailRef = useRef(0)
+    const stickyRef = useRef(null)
+    const [currentDetail, setCurrentDetail] = useState(0)
 
     useEffect(() => {
         const container = containerRef.current
-        const detailsContainer = detailsRef.current
-        
-        if (!container || !detailsContainer) return
+        const sticky = stickyRef.current
 
-        // Create timeline for the scroll animation
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-                pin: detailsContainer,
-                onUpdate: (self) => {
-                    // Calculate which detail should be active based on scroll progress
-                    const progress = self.progress
-                    const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
-                    
-                    if (newIndex !== currentDetailRef.current) {
-                        currentDetailRef.current = newIndex
-                        updateDetail(newIndex)
-                    }
+        if (!container || !sticky) return
+
+        // Kill any existing ScrollTriggers
+        ScrollTrigger.getAll().forEach(trigger => {
+            if (trigger.vars.trigger === container) {
+                trigger.kill()
+            }
+        })
+
+        // Create ScrollTrigger for sticky behavior and detail switching
+        ScrollTrigger.create({
+            trigger: container,
+            start: "top top",
+            end: "bottom bottom",
+            pin: sticky,
+            pinSpacing: false,
+            scrub: 1,
+            onUpdate: (self) => {
+                // Calculate which detail should be active based on scroll progress
+                const progress = self.progress
+                const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
+                
+                if (newIndex !== currentDetail) {
+                    setCurrentDetail(newIndex)
                 }
             }
         })
 
-        // Function to update the active detail with smooth transitions
-        const updateDetail = (index) => {
-            const detail = Details[index]
-            
-            // Animate out current content
-            gsap.to(['.detail-icon', '.detail-title', '.detail-queue', '.detail-desc1', '.detail-desc2'], {
-                opacity: 0,
-                y: 20,
-                duration: 0.3,
-                stagger: 0.05,
-                onComplete: () => {
-                    // Update content
-                    document.querySelector('.detail-icon').src = detail.icon
-                    document.querySelector('.detail-title').textContent = detail.title
-                    document.querySelector('.detail-queue').src = detail.queue
-                    document.querySelector('.detail-desc1').textContent = detail.desc1
-                    document.querySelector('.detail-desc2').textContent = detail.desc2
-                    
-                    // Animate in new content
-                    gsap.fromTo(['.detail-icon', '.detail-title', '.detail-queue', '.detail-desc1', '.detail-desc2'], 
-                        { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.4, stagger: 0.05 }
-                    )
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.vars.trigger === container) {
+                    trigger.kill()
                 }
             })
         }
+    }, [currentDetail])
 
-        return () => {
-            ScrollTrigger.killAll()
-        }
-    }, [])
+    // Animate detail changes
+    useEffect(() => {
+        const detailElements = ['.detail-icon', '.detail-title', '.detail-queue', '.detail-desc1', '.detail-desc2']
+        
+        gsap.fromTo(detailElements,
+            { opacity: 0, y: 20 },
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 0.6, 
+                stagger: 0.1,
+                ease: "power2.out"
+            }
+        )
+    }, [currentDetail])
 
     return (
-        <div 
+        <div
             ref={containerRef}
-            className='w-full relative'
-            style={{ height: '400vh' }} // Make container tall enough for scroll
+            className='w-full overflow-hidden h-fit md:h-[400vh] relative'
         >
-            <div className='w-full overflow-hidden h-screen flex justify-center sticky top-0'>
+            {/* Desktop View */}
+            <div 
+                ref={stickyRef}
+                className='w-full hidden overflow-hidden h-screen md:flex justify-center items-center'
+            >
                 <div className="w-[80%] absolute flex">
                     <Image
                         src="/branch.svg"
                         alt="home3"
                         width={1000}
                         height={1000}
-                        className='w-full h-full'
+                        className='w-full h-full object-cover'
                     />
                 </div>
 
-                <div 
-                    ref={detailsRef}
-                    className="flex w-[80%] z-50 relative justify-end"
-                >
+                <div className="flex w-[80%] z-50 relative justify-end">
                     <div className="w-1/2">
-                        <div className="flex flex-col gap-20"
-                            style={{
-                                padding: "clamp(1rem,4vw,200rem)"
-                            }}
-                        >
+                        <div className="flex flex-col gap-20 p-8">
                             <div className="text-2xl leading-snug sm:text-3xl md:text-4xl pixel text-left text-[#fff]">
                                 How We Make Every Occasion Sweeter
                             </div>
@@ -139,44 +133,119 @@ const Home3 = () => {
                                 <Image
                                     src="/point.svg"
                                     alt="home3"
-                                    width={1000}
-                                    height={1000}
+                                    width={50}
+                                    height={50}
                                     className='h-full w-auto'
                                 />
                                 <div className="flex gap-6 flex-col">
                                     {/* Dynamic detail content */}
-                                    <div className="flex justify-between gap-3">
+                                    <div className="flex justify-between gap-3 items-center">
                                         <Image
-                                            src={Details[0].icon}
+                                            src={Details[currentDetail].icon}
                                             alt="detail icon"
-                                            width={1000}
-                                            height={1000}
-                                            className='h-full w-auto detail-icon'
+                                            width={60}
+                                            height={60}
+                                            className='h-12 w-auto detail-icon'
                                         />
 
-                                        <div className="text-white text-3xl font-semibold inter detail-title">
-                                            {Details[0].title}
+                                        <div className="text-white text-2xl md:text-3xl font-semibold inter detail-title flex-1 px-4">
+                                            {Details[currentDetail].title}
                                         </div>
 
                                         <Image
-                                            src={Details[0].queue}
+                                            src={Details[currentDetail].queue}
                                             alt="detail queue"
-                                            width={1000}
-                                            height={1000}
-                                            className='h-full w-auto detail-queue'
+                                            width={60}
+                                            height={60}
+                                            className='h-12 w-auto detail-queue'
                                         />
                                     </div>
 
-                                    <div className="text-white inter italic text-xl detail-desc1">
-                                        {Details[0].desc1}
+                                    <div className="text-white inter italic text-lg md:text-xl detail-desc1">
+                                        {Details[currentDetail].desc1}
                                     </div>
 
-                                    <div className="text-white inter italic text-xl detail-desc2">
-                                        {Details[0].desc2}
+                                    <div className="text-white inter italic text-lg md:text-xl detail-desc2">
+                                        {Details[currentDetail].desc2}
                                     </div>
                                 </div>
                             </div>
 
+                            <Button text={"Join Waitlist"} bgcolor={"#8A3E1D"} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile View */}
+            <div className="flex w-full md:hidden relative h-fit">
+                <div className="w-full bg-black py-20">
+                    <div className="absolute w-full h-full bg-cover z-10 opacity-30"
+                        style={{
+                            padding: "clamp(5rem,4vw,200rem) clamp(1rem,4vw,200rem)",
+                            backgroundImage: "url('/mb.svg')",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        }}
+                    >
+                    </div>
+                    
+                    <div className="flex flex-col z-50 relative items-center w-[100%] gap-12"
+                        style={{
+                            padding: "clamp(5rem,2vw,200rem) 0"
+                        }}
+                    >
+                        <div className="text-xl max-w-52 leading-snug sm:text-3xl md:text-3xl pixel md:text-left text-[#fff] text-center">
+                            The Smarter Way to Sweeten Your Celebrations
+                        </div>
+                        
+                        {Details.map((detail, index) => (
+                            <div key={index} className="flex gap-5">
+                                <Image
+                                    src="/point.svg"
+                                    alt="home3"
+                                    width={50}
+                                    height={50}
+                                    className='h-42 w-auto'
+                                />
+                                <div className="flex gap-6 flex-col">
+                                    <div className="flex justify-start gap-3">
+                                        <div className="flex gap-5">
+                                            <Image
+                                                src={detail.icon}
+                                                alt="detail icon"
+                                                width={40}
+                                                height={40}
+                                                className='h-10 w-auto'
+                                            />
+
+                                            <div className="text-white text-sm font-semibold inter max-w-[35vw] leading-tight">
+                                                {detail.title}
+                                            </div>
+                                        </div>
+
+                                        <Image
+                                            src={detail.queue}
+                                            alt="detail queue"
+                                            width={36}
+                                            height={36}
+                                            className='h-9 translate-x-5 w-auto'
+                                        />
+                                    </div>
+
+                                    <div className="text-white w-72 inter italic text-sm">
+                                        {detail.desc1}
+                                    </div>
+
+                                    <div className="text-white w-72 inter italic text-sm">
+                                        {detail.desc2}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                        
+                        <div className="flex w-full justify-center">
                             <Button text={"Join Waitlist"} bgcolor={"#8A3E1D"} />
                         </div>
                     </div>
