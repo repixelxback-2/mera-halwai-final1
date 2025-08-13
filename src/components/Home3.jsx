@@ -70,7 +70,7 @@ const Home3 = () => {
                 // Calculate which detail should be active based on scroll progress
                 const progress = self.progress
                 const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
-                
+
                 if (newIndex !== currentDetail) {
                     setCurrentDetail(newIndex)
                 }
@@ -89,13 +89,13 @@ const Home3 = () => {
     // Animate detail changes
     useEffect(() => {
         const detailElements = ['.detail-icon', '.detail-title', '.detail-queue', '.detail-desc1', '.detail-desc2']
-        
+
         gsap.fromTo(detailElements,
             { opacity: 0, y: 20 },
-            { 
-                opacity: 1, 
-                y: 0, 
-                duration: 0.6, 
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
                 stagger: 0.1,
                 ease: "power2.out"
             }
@@ -105,50 +105,59 @@ const Home3 = () => {
     return (
         <div
             ref={containerRef}
-            className='w-full overflow-hidden h-fit md:h-[400vh] relative'
+            className='w-full overflow-hidden h-full md:h-[400vh] relative'
         >
             {/* Desktop View */}
-            <div 
+            <div
                 ref={stickyRef}
-                className='w-full hidden overflow-hidden h-screen md:flex justify-center items-center'
+                className='w-full hidden overflow-hidden h-screen md:flex justify-center items-start relative'
             >
-                <div className="w-[80%] absolute flex">
+                {/* Background Image - Full container size */}
+                <div className="absolute inset-0 w-[100%] h-[100%] flex justify-center items-start">
+
                     <Image
                         src="/branch.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
-                        className='w-full h-full object-cover'
+                        width={100}
+                        height={100}
+                        className='w-[80%] h-auto'
                     />
                 </div>
 
-                <div className="flex w-[80%] z-50 relative justify-end">
-                    <div className="w-1/2">
-                        <div className="flex flex-col gap-20 p-8">
-                            <div className="text-2xl leading-snug sm:text-3xl md:text-4xl pixel text-left text-[#fff]">
+                <div className="flex w-[80%] max-w-7xl mx-auto px-4 lg:px-8 z-50 relative justify-end items-center h-[90%]">
+                    <div className="w-[50%]  h-fit ml-auto">
+                        <div className="flex h-full text-white flex-col gap-8 lg:gap-12 "
+
+                        style={{
+                            padding: "clamp(1rem,1vw,200rem) clamp(1rem,4vw,200rem) clamp(1rem,1vw,200rem) "
+
+                        }}
+                        >
+                            <div className="text-2xl leading-snug lg:text-3xl xl:text-4xl pixel text-center lg:text-left text-[#ffffff]">
                                 How We Make Every Occasion Sweeter
                             </div>
 
-                            <div className="flex gap-5">
+                            {/* Content Section */}
+                            <div className="flex gap-4 lg:gap-5 justify-center lg:justify-start">
                                 <Image
                                     src="/point.svg"
                                     alt="home3"
                                     width={50}
                                     height={50}
-                                    className='h-full w-auto'
+                                    className='h-full w-auto flex-shrink-0'
                                 />
-                                <div className="flex gap-6 flex-col">
+                                <div className="flex gap-4 lg:gap-6 flex-col flex-1 min-w-0">
                                     {/* Dynamic detail content */}
-                                    <div className="flex justify-between gap-3 items-center">
+                                    <div className="flex justify-between  w-full gap-3 items-center">
                                         <Image
                                             src={Details[currentDetail].icon}
                                             alt="detail icon"
                                             width={60}
                                             height={60}
-                                            className='h-12 w-auto detail-icon'
+                                            className='h-10 lg:h-16 w-auto detail-icon flex-shrink-0'
                                         />
 
-                                        <div className="text-white text-2xl md:text-3xl font-semibold inter detail-title flex-1 px-4">
+                                        <div className="text-white text-lg w-[50%] lg:text-2xl xl:text-2xl font-semibold inter detail-title flex-1 px-2 lg:px-4 text-center lg:text-left">
                                             {Details[currentDetail].title}
                                         </div>
 
@@ -157,27 +166,30 @@ const Home3 = () => {
                                             alt="detail queue"
                                             width={60}
                                             height={60}
-                                            className='h-12 w-auto detail-queue'
+                                            className='h-10 lg:h-12 w-auto detail-queue flex-shrink-0'
                                         />
                                     </div>
 
-                                    <div className="text-white inter italic text-lg md:text-xl detail-desc1">
+                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc1 text-center lg:text-left">
                                         {Details[currentDetail].desc1}
                                     </div>
 
-                                    <div className="text-white inter italic text-lg md:text-xl detail-desc2">
+                                    <div className="text-white inter italic text-base lg:text-lg xl:text-xl detail-desc2 text-center lg:text-left">
                                         {Details[currentDetail].desc2}
                                     </div>
                                 </div>
                             </div>
 
-                            <Button text={"Join Waitlist"} bgcolor={"#8A3E1D"} />
+                            {/* Button */}
+                            <div className="flex justify-center lg:justify-start">
+                                <Button text={"Join Waitlist"} bgcolor={"#8A3E1D"} />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile View */}
+            {/* Mobile View - Unchanged */}
             <div className="flex w-full md:hidden relative h-fit">
                 <div className="w-full bg-black py-20">
                     <div className="absolute w-full h-full bg-cover z-10 opacity-30"
@@ -190,7 +202,7 @@ const Home3 = () => {
                         }}
                     >
                     </div>
-                    
+
                     <div className="flex flex-col z-50 relative items-center w-[100%] gap-12"
                         style={{
                             padding: "clamp(5rem,2vw,200rem) 0"
@@ -199,7 +211,7 @@ const Home3 = () => {
                         <div className="text-xl max-w-52 leading-snug sm:text-3xl md:text-3xl pixel md:text-left text-[#fff] text-center">
                             The Smarter Way to Sweeten Your Celebrations
                         </div>
-                        
+
                         {Details.map((detail, index) => (
                             <div key={index} className="flex gap-5">
                                 <Image
@@ -211,7 +223,7 @@ const Home3 = () => {
                                 />
                                 <div className="flex gap-6 flex-col">
                                     <div className="flex justify-start gap-3">
-                                        <div className="flex gap-5">
+                                        <div className="flex gap-3">
                                             <Image
                                                 src={detail.icon}
                                                 alt="detail icon"
@@ -244,7 +256,7 @@ const Home3 = () => {
                                 </div>
                             </div>
                         ))}
-                        
+
                         <div className="flex w-full justify-center">
                             <Button text={"Join Waitlist"} bgcolor={"#8A3E1D"} />
                         </div>
