@@ -132,7 +132,6 @@ const Home3 = () => {
             ref={containerRef}
             className='w-full h-full md:h-[400vh] relative overflow-x-hidden'
         >
-            {/* Desktop View */}
             <div
                 ref={stickyRef}
                 className='w-full hidden h-screen md:flex justify-center items-start relative overflow-x-hidden'
@@ -215,7 +214,7 @@ const Home3 = () => {
 
             {/* Mobile View */}
             <div className="flex w-full md:hidden relative h-fit overflow-x-hidden">
-                <div className="w-full bg-black py-20">
+                <div className="w-full bg-black py-20 flex justify-center">
                     <div 
                         className="absolute w-full h-full bg-cover z-10 opacity-30"
                         style={{
@@ -228,7 +227,7 @@ const Home3 = () => {
                     />
 
                     <div 
-                        className="flex flex-col z-50 relative items-center w-full gap-12 overflow-x-hidden"
+                        className="flex flex-col z-50 relative items-center w-[80%] gap-12 "
                         style={{
                             padding: "clamp(5rem,2vw,200rem) 0"
                         }}
@@ -238,7 +237,7 @@ const Home3 = () => {
                         </div>
 
                         {Details.map((detail, index) => (
-                            <div key={index} className="flex gap-5 w-full max-w-full overflow-x-hidden">
+                            <div key={index} className="flex gap-5 w-full max-w-full ">
                                 <Image
                                     src="/point.svg"
                                     alt="home3"
@@ -246,8 +245,8 @@ const Home3 = () => {
                                     height={50}
                                     className='h-42 w-auto flex-shrink-0'
                                 />
-                                <div className="flex gap-6 flex-col flex-1 min-w-0 overflow-hidden">
-                                    <div className="flex justify-start gap-3 overflow-hidden">
+                                <div className="flex gap-6 flex-col flex-1 min-w-0">
+                                    <div className="flex justify-start gap-3 ">
                                         <div className="flex gap-3 flex-1 min-w-0">
                                             <Image
                                                 src={detail.icon}
@@ -257,7 +256,7 @@ const Home3 = () => {
                                                 className='h-10 w-auto flex-shrink-0'
                                             />
 
-                                            <div className="text-white text-sm font-semibold inter max-w-[35vw] leading-tight overflow-hidden">
+                                            <div className="text-white text-sm font-semibold inter max-w-[35vw] leading-tight">
                                                 {detail.title}
                                             </div>
                                         </div>
@@ -267,15 +266,15 @@ const Home3 = () => {
                                             alt="detail queue"
                                             width={36}
                                             height={36}
-                                            className='h-9 translate-x-5 w-auto flex-shrink-0'
+                                            className='h-9  w-auto flex-shrink-0'
                                         />
                                     </div>
 
-                                    <div className="text-white w-72 inter italic text-sm overflow-hidden">
+                                    <div className="text-white w-72 inter italic text-sm ">
                                         {detail.desc1}
                                     </div>
 
-                                    <div className="text-white w-72 inter italic text-sm overflow-hidden">
+                                    <div className="text-white w-72 inter italic text-sm ">
                                         {detail.desc2}
                                     </div>
                                 </div>

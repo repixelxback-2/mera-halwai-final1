@@ -6,9 +6,9 @@ import { ArrowDown, ArrowDownAZ, ChevronDown } from 'lucide-react'
 
 const Home1 = () => {
     return (
-        <div className='w-full relative  h-[60vh] flex flex-col justify-center items-center'
+        <div className='w-full relative  md:h-[60vh] flex flex-col justify-center items-center'
         style={{
-              marginTop: 'clamp(5rem,3vw,200rem)',
+              marginTop: 'clamp(3rem,3vw,200rem)',
         }}
         >
             <div className="absolute left-0 -top-[12%]">

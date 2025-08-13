@@ -32,7 +32,7 @@ const Footer = () => {
                     <div className="text-2xl sm:text-3xl leading-snug md:text-5xl pixel text-center md:text-left text-[#ffffff]"
 
                     style={{
-                        fontSize: "clamp(2rem,2.85vw,200rem)"
+                        fontSize: "clamp(1.75rem,2.85vw,200rem)"
 
                     }}
                     >
@@ -122,8 +122,8 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <hr className='border-t-2 w-[90%] border-white/70' />
-                    <div className="flex w-[90%] text-black text-xl"> MeraHalwai © 2025. All Rights Reserved</div>
+                    <hr className='border-t-2 w-[100%] md:w-[90%] border-white/70' />
+                    <div className="flex w-[100%] md:w-[90%] text-black text-sm md:text-xl"> MeraHalwai © 2025. All Rights Reserved</div>
                 </div>
 
             </div>
