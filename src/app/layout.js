@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Mera Halwai",
+  
   description: "Mera Halwai - Become a vendor",
 };
 export default function RootLayout({ children }) {
