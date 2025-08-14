@@ -39,9 +39,10 @@ const Navbar = () => {
           padding: 'clamp(2rem,2vw,2rem)'
         }}
       >
-        <div className="w-full max-w-7xl flex justify-between items-center px-4">
+        <div className="w-full md:w-[80%] flex justify-between items-center px-4">
+
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link href={"/"} className="flex-shrink-0">
             <Image
               src="/logo.svg"
               alt="logo"
@@ -52,7 +53,7 @@ const Navbar = () => {
                 height: "auto"
               }}
             />
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">

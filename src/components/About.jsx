@@ -10,7 +10,7 @@ const About = () => {
             }}
         >
 
-            <div className="flex md:flex-row flex-col items-center justify-center w-full md:w-[80%] gap-10 md:gap-0 md:justify-between">
+            <div className="flex md:flex-row flex-col items-center justify-center w-full md:w-[75%] gap-10 md:gap-0 md:justify-between">
 
                 <div className="flex flex-col gap-8 w-[80%] md:w-[60%]"
                 >
@@ -50,7 +50,7 @@ const About = () => {
 
 
             <div className="flex  w-full justify-center">
-                <div className="w-full md:w-[80%] md:rounded-4xl overflow-hidden md:h-[40vh] flex md:flex-row flex-col">
+                <div className="w-full md:w-[75%] md:rounded-4xl overflow-hidden md:h-[40vh] flex md:flex-row flex-col">
                     <div className="w-full md:w-1/2 flex flex-col justify-between items-center md:items-end gap-5 bg-[#8A3E1D]  md:h-full"
                         style={{
                             padding: "clamp(3em,3vw,300rem) clamp(2em,3vw,300rem)" 

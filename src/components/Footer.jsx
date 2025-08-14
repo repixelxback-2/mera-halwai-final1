@@ -8,8 +8,8 @@ const Footer = () => {
         <div className='w-full flex items-center flex-col h-full'>
             <Image
                 src="/paji.svg"
-                width={1000}
-                height={1000}
+                width={100}
+                height={100}
                 alt='hey'
                 className='w-40 h-full'
 
@@ -17,8 +17,8 @@ const Footer = () => {
             <div className="bg-gradient-to-l overflow-hidden relative from-[#8A3E1D] to-[#EC8A25] w-full rounded-t-4xl md:rounded-t-[13rem] h-full md:h-[7 0vh]">
                 <Image
                     src="/chai.svg"
-                    width={1000}
-                    height={1000}
+                    width={100}
+                    height={100}
                     alt='hey'
                     className='w-[80%] right-0 top-52 z-10 absolute h-full'
                 />
@@ -44,8 +44,8 @@ const Footer = () => {
                         <div className="flex items-center md:items-start justify-center md:justify-end flex-col  gap-5 md:gap-10 w-full md:w-[30%]">
                             <Image
                                 src="/logo-w.svg"
-                                width={1000}
-                                height={1000}
+                                width={100}
+                                height={100}
                                 alt='hey'
                                 className='w-[80%] md:w-62 h-fit'
                             />
@@ -90,23 +90,23 @@ const Footer = () => {
                                         <Link href={"https://www.instagram.com/merahalwai?igsh=ZmRuMDJ5b2Rpb2gw"} className='h-full'>
                                         <Image
                                             src="/socials/insta.svg"
-                                            width={1000}
-                                            height={1000}
+                                            width={100}
+                                            height={100}
                                             alt='hey'
                                             className='w-10 h-full'
                                         />
                                         </Link>
                                         <Image
                                             src="/socials/fb.svg"
-                                            width={1000}
-                                            height={1000}
+                                            width={100}
+                                            height={100}
                                             alt='hey'
                                             className='w-fit h-full'
                                         />
                                         <Image
                                             src="/socials/x.svg"
-                                            width={1000}
-                                            height={1000}
+                                            width={100}
+                                            height={100}
                                             alt='hey'
                                             className='w-fit h-full'
                                         />

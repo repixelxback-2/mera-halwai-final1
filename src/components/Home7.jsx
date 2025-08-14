@@ -26,22 +26,22 @@ const Home7 = () => {
                     <Image
                         src="/c1.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full relative z-20 shadow-2xl   shadow-black/20  rounded-4xl h-fit'
                     />
                     <Image
                         src="/c2.svg"
                         alt="hme3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full relative z-20  shadow-2xl shadow-black/20  rounded-4xl h-fit'
                     />
                     <Image
                         src="/c3.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full relative z-20 shadow-2xl  shadow-black/20  rounded-4xl h-fit'
                     />
                 </div>

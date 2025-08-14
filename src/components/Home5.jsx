@@ -26,30 +26,30 @@ const Home5 = () => {
                         <Image
                             src="/arrow.svg"
                             alt="home3"
-                            width={1000}
-                            height={1000}
+                            width={100}
+                            height={100}
                             className=' w-[100%] rotate-90 md:w-[70%] md:rotate-0 md:h-[40vh] h-full'
                         />
                     </div>
                     <Image
                         src="/a1.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full md:w-1/3 relative z-20 bg-gradient-to-l from-[#F1EDE2] to-[#fffefc] rounded-4xl md:h-fit'
                     />
                     <Image
                         src="/a2.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full md:w-1/3 relative z-20 bg-gradient-to-l from-[#F1EDE2] to-[#fffefc] rounded-4xl md:h-fit'
                     />
                     <Image
                         src="/a3.svg"
                         alt="home3"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-full md:w-1/3 relative z-20 bg-gradient-to-l from-[#F1EDE2] to-[#fffefc] rounded-4xl md:h-fit'
                     />
                 </div>

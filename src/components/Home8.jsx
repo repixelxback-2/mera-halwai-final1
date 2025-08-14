@@ -25,16 +25,16 @@ const Home8 = () => {
                         <Image
                             alt='h'
                             src="/qr-ph.svg"
-                            width={1000}
-                            height={1000}
+                            width={400}
+                            height={400}
                             className='w-fit md:w-full h-68 md:h-[60vh]'
 
                         />
                         <Image
                             alt='h'
                             src="/qr.svg"
-                            width={1000}
-                            height={1000}
+                            width={400}
+                            height={400}
                             className='w-42 md:w-full  md:h-[50vh]'
 
                         />
@@ -48,16 +48,16 @@ const Home8 = () => {
                     <Image
                         alt='h'
                         src="/qr.svg"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-42 md:w-full  md:h-[50vh]'
 
                     />
                     <Image
                         alt='h'
                         src="/qr-ph.svg"
-                        width={1000}
-                        height={1000}
+                        width={400}
+                        height={400}
                         className='w-42 md:w-full h-68 md:h-[60vh]'
 
                     />
