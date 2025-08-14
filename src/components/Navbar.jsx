@@ -66,7 +66,7 @@ const Navbar = () => {
                 About Us
               </div>
             </Link>
-            <Link href="#help">
+            <Link href="https://wa.me/917300321034">
               <div
                 style={{
                   padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
@@ -76,7 +76,7 @@ const Navbar = () => {
                 Help
               </div>
             </Link>
-            <Link href="#vendor">
+            <Link href="https://wa.me/917300321034">
               <div
                 style={{
                   padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
@@ -86,7 +86,7 @@ const Navbar = () => {
                 Become a Vendor
               </div>
             </Link>
-            <Link href="#contact">
+            <Link href="https://wa.me/917300321034">
               <div
                 style={{
                   padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
@@ -96,17 +96,8 @@ const Navbar = () => {
                 Contact Us
               </div>
             </Link>
-            <div className="flex items-center space-x-4 ml-4 text-sm">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-[#8A3E1D]/70 hover:text-[#8A3E1D] transition-colors text-sm"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+        
+          
           </div>
 
           {/* Mobile Menu Button */}

@@ -79,27 +79,23 @@ const Footer = () => {
                                         Contact With Us
                                     </div>
                                     <div className="flex flex-col gap-3 font-normal">
-                                        <Link href="/">Email{": info@merahalwai.com"} </Link>
-                                        <Link href="/">{"Contact No: +917448006475"}</Link>
+                                        <Link href="/">Email{": merahalwai.com@gmail.com "} </Link>
+                                        <Link href="/">{"Contact No: +917300321034"}</Link>
 
 
                                     </div>
 
                                     <div className="flex items-center gap-3">
-                                        <Image
-                                            src="/socials/yt.svg"
-                                            width={1000}
-                                            height={1000}
-                                            alt='hey'
-                                            className='w-6 md:w-10 h-full'
-                                        />
+                                       
+                                        <Link href={"https://www.instagram.com/merahalwai?igsh=ZmRuMDJ5b2Rpb2gw"} className='h-full'>
                                         <Image
                                             src="/socials/insta.svg"
                                             width={1000}
                                             height={1000}
                                             alt='hey'
-                                            className='w-fit h-full'
+                                            className='w-10 h-full'
                                         />
+                                        </Link>
                                         <Image
                                             src="/socials/fb.svg"
                                             width={1000}
