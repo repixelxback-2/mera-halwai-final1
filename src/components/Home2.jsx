@@ -45,10 +45,10 @@ const Home2 = () => {
 
                 </div>
                 <Image
-                    src="/mp.webp"
+                    src="/mp.png"
                     alt="hero"
-                    width={100}
-                    height={100}
+                    width={400}
+                    height={400}
                     className='h-full absolute right-0 w-auto'
                 />
             </div>
