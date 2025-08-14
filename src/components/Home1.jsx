@@ -49,6 +49,7 @@ const Home1 = () => {
                         width={200}
                         height={200}
                         priority
+                        className='swing'
                         style={{
                             width: 'clamp(5rem,11vw,200rem)',
                             height: "auto"
@@ -56,7 +57,7 @@ const Home1 = () => {
                     />
                 </div>
 
-                <div className="absolute"
+                <div className="absolute rounded-b-full overflow-hidden"
                 style={{
                     bottom: 'clamp(16rem,12vw,100rem)',
                     right: "clamp(0.0001rem,6vw,100rem)"
@@ -68,6 +69,7 @@ const Home1 = () => {
                         alt="Food illustration"
                         width={200}
                         height={200}
+                        className='swing'
                         loading="eager"
                         style={{
                             width: 'clamp(5rem,11vw,200rem)',

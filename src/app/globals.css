@@ -18,6 +18,16 @@
   /* border: 1px solid red; */
 }
 
+@keyframes rotateSwing {
+  0% { transform: rotate(12deg); }
+  50% { transform: rotate(-12deg); }
+  100% { transform: rotate(12deg); }
+}
+
+.swing {
+  animation: rotateSwing 0.5s infinite steps(1);
+}
+
 .inter{
   font-family: var(--font-inter), sans-serif;
 }
