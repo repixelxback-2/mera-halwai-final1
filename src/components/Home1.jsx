@@ -14,9 +14,10 @@ const Home1 = () => {
             <div className="absolute left-0 -top-[12%]">
                 <Image
                     src="/bg-khana1.svg"
-                    alt="hero"
-                    width={100}
-                    height={100}
+                    alt="Decorative food illustration"
+                    width={300}
+                    height={300}
+                    priority
                     style={{
                         width: 'clamp(10rem,6vw,200rem)',
                         height: "auto"
@@ -27,9 +28,10 @@ const Home1 = () => {
              <div className="absolute right-0 bottom-[0%]">
                 <Image
                     src="/bg-khana2.svg"
-                    alt="hero"
-                    width={100}
-                    height={100}
+                    alt="Decorative food illustration"
+                    width={300}
+                    height={300}
+                    priority
                     style={{
                         width: 'clamp(10rem,10vw,200rem)',
                         height: "auto"
@@ -43,9 +45,10 @@ const Home1 = () => {
                 <div className="absolute left-[10%] -top-[15%]">
                     <Image
                         src="/khana1.svg"
-                        alt="hero"
-                        width={100}
-                        height={100}
+                        alt="Food illustration"
+                        width={200}
+                        height={200}
+                        priority
                         style={{
                             width: 'clamp(5rem,11vw,200rem)',
                             height: "auto"
@@ -62,9 +65,10 @@ const Home1 = () => {
                 >
                     <Image
                         src="/khana2.svg"
-                        alt="hero"
-                        width={100}
-                        height={100}
+                        alt="Food illustration"
+                        width={200}
+                        height={200}
+                        loading="eager"
                         style={{
                             width: 'clamp(5rem,11vw,200rem)',
                             height: "auto"
