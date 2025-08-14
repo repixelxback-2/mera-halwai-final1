@@ -20,10 +20,10 @@ const Footer = () => {
                     width={1000}
                     height={1000}
                     alt='hey'
-                    className='w-[80%] right-0 top-52 absolute h-full'
+                    className='w-[80%] right-0 top-52 z-10 absolute h-full'
                 />
 
-                <div className="flex flex-col justify-between items-center gap-5 md:gap-10 w-full h-full"
+                <div className="flex flex-col relative z-40 justify-between items-center gap-5 md:gap-10 w-full h-full"
                     style={{
                         padding: "clamp(2.5rem,5vw,200rem)"
                     }}
@@ -61,11 +61,11 @@ const Footer = () => {
                                         Quick Links
                                     </div>
                                     <div className="flex flex-col gap-3 font-normal">
-                                        <Link href="/">Home</Link>
-                                        <Link href="/">Contact</Link>
-                                        <Link href="/">About</Link>
-                                        <Link href="/">Privacy Policy</Link>
-                                        <Link href="/">Terms & Condition</Link>
+                                        <Link className='cursor-pointer' href="/">Home</Link>
+                                        <Link className='cursor-pointer' href="https://wa.me/917300321034">Contact</Link>
+                                        <Link className='cursor-pointer' href="/about">About</Link>
+                                        <Link className='cursor-pointer' href="/privacy">Privacy Policy</Link>
+                                        <Link className='cursor-pointer' href="/terms">Terms & Condition</Link>
 
 
                                     </div>

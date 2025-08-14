@@ -52,7 +52,7 @@ const Home2 = () => {
                     className='h-full absolute right-0 w-auto'
                 />
             </div>
-            <div className=" md:hidden relative  flex w-[95%] h-full"
+            <div className=" md:hidden relative  flex w-[98%] h-full"
             style={{
                 padding: "clamp(0.5rem,3vw,200rem)"
 
