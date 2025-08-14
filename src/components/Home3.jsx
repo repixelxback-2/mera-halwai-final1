@@ -134,7 +134,7 @@ const Home3 = () => {
                 {/* Background Image - Full container size */}
                 <div className="absolute inset-0 w-full h-full flex justify-center items-start overflow-hidden">
                     <Image
-                        src="/branch.svg"
+                        src="/branch.webp"
                         alt="home3"
                         width={100}
                         height={100}
@@ -215,7 +215,7 @@ const Home3 = () => {
                         className="absolute w-full h-full bg-cover z-10 opacity-30"
                         style={{
                             padding: "clamp(5rem,4vw,200rem) clamp(1rem,4vw,200rem)",
-                            backgroundImage: "url('/mb.svg')",
+                            backgroundImage: "url('/mb.webp')",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             backgroundColor: "rgba(0, 0, 0, 0.5)",

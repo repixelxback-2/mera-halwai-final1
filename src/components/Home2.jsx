@@ -45,7 +45,7 @@ const Home2 = () => {
 
                 </div>
                 <Image
-                    src="/mp.svg"
+                    src="/mp.webp"
                     alt="hero"
                     width={100}
                     height={100}
@@ -59,7 +59,7 @@ const Home2 = () => {
             }}
             >
             <Image
-                    src="/mobile-app.svg"
+                    src="/mobile-app.webp"
                     alt="hero"
                     width={100}
                     height={100}

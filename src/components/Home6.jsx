@@ -5,7 +5,7 @@ const Home6 = () => {
     return (
         <div className='w-full flex flex-col items-center justify-center h-[50vh] md:h-[45vh] bg-black gap-5 relative'>
             <Image
-                src="/banner.svg"
+                src="/banner.webp"
                 alt="home3"
                 width={500}
                 height={500}

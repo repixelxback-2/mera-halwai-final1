@@ -25,7 +25,6 @@ const Navbar = () => {
     { icon: Mail, label: 'Contact Us', href: 'https://wa.me/917300321034' },
   ]
 
-  // Additional footer links
   const footerLinks = [
     { label: 'Terms & Conditions', href: '/terms' },
     { label: 'Privacy Policy', href: '/privacy' },

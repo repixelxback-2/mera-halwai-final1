@@ -36,7 +36,7 @@ const About = () => {
 
                 <div className="w-[70%] md:w-[30%]">
                     <Image
-                        src="/sir.svg"
+                        src="/sir.webp"
                         alt="about"
                         width={100}
                         height={100}

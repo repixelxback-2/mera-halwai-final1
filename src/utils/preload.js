@@ -56,7 +56,7 @@ export const initPreload = (options = { images: [], fonts: true }) => {
     '/bg-khana1.svg',
     '/bg-khana2.svg',
     '/khana1.svg',
-    '/khana2.svg',
+    '/khana2.webp',
     ...options.images
   ];
   

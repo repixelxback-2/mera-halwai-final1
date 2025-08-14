@@ -24,13 +24,27 @@ const Home = () => (
   <div className='w-full h-full min-h-screen'>
     <Navbar />
     <Home1 />
-    <Home2 />
-    <Home3 />
-    <Home5 />
-    <Home6 />
-    <Home7 />
-    <Strips />
-    <Home8 />
+    <Suspense fallback={<LoadingFallback />}>
+      <Home2 />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Home3 />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Home5 />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Home6 />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Home7 />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Strips />
+    </Suspense>
+    <Suspense fallback={<LoadingFallback />}>
+      <Home8 />
+    </Suspense>
     <Footer />
   </div>
 )
