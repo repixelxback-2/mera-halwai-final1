@@ -11,7 +11,7 @@ const Home6 = () => {
                 height={500}
                 className='w-full absolute leading-0 opacity-40 object-cover h-[100%]'
             />
-            <div className="text-xl w-[70%] md:w-[40%]  z-40 sm:text-5xl leading-snug md:text-5xl text-center pixel inline text-[#F1EDE2]"
+            <div className="text-xl w-[70%] md:w-[40%]  z-40 sm:text-3xl  leading-snug md:text-4xl xl:text-5xl text-center pixel inline text-[#F1EDE2]"
             >
                 Explore all features in Thirty seconds
             </div>

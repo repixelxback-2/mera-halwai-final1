@@ -46,7 +46,6 @@ const Home3 = () => {
     const [currentDetail, setCurrentDetail] = useState(0)
 
     useEffect(() => {
-        // Add overflow hidden to body on mount to prevent horizontal scroll
         const originalBodyOverflow = document.body.style.overflow
         const originalHtmlOverflow = document.documentElement.style.overflowX
         
@@ -58,14 +57,12 @@ const Home3 = () => {
 
         if (!container || !sticky) return
 
-        // Kill any existing ScrollTriggers
         ScrollTrigger.getAll().forEach(trigger => {
             if (trigger.vars.trigger === container) {
                 trigger.kill()
             }
         })
 
-        // Use ScrollTrigger.batch for better performance and timing
         const createScrollTrigger = () => {
             ScrollTrigger.create({
                 trigger: container,
@@ -85,14 +82,12 @@ const Home3 = () => {
                     }
                 },
                 onRefresh: () => {
-                    // Ensure overflow is maintained on refresh
                     document.body.style.overflowX = 'hidden'
                     document.documentElement.style.overflowX = 'hidden'
                 }
             })
         }
 
-        // Delay ScrollTrigger creation to allow layout to settle
         const timeoutId = setTimeout(() => {
             createScrollTrigger()
             ScrollTrigger.refresh() // Force refresh after creation
@@ -156,7 +151,8 @@ const Home3 = () => {
                                 padding: "clamp(1rem,1vw,200rem) clamp(1rem,4vw,200rem) clamp(1rem,1vw,200rem)"
                             }}
                         >
-                            <div className="text-2xl leading-snug lg:text-3xl xl:text-4xl pixel text-center lg:text-left text-[#ffffff]">
+                            <div className="text-xl
+                            sm:text-xl leading-snug md:text-2xl lg:text-3xl xl:text-4xl pixel text-center lg:text-left text-[#ffffff]">
                                 How We Make Every Occasion Sweeter
                             </div>
 
