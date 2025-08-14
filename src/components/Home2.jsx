@@ -59,10 +59,10 @@ const Home2 = () => {
             }}
             >
             <Image
-                    src="/mobile-app.jpg"
+                    src="/mobile-app.webp"
                     alt="hero"
-                    width={1000}
-                    height={1000}
+                    width={2000}
+                    height={2000}
                     className='h-full w-full'
                 />
                 <div className="w-full absolute justify-center flex bottom-12">
