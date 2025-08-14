@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from './Button'
 import Available from './Available'
-import Image from 'next/image'
-import { ArrowDown, ArrowDownAZ, ChevronDown } from 'lucide-react'
+import OptimizedImage from './OptimizedImage'
+import { ChevronDown } from 'lucide-react'
 
 const Home1 = () => {
     return (
@@ -12,7 +12,7 @@ const Home1 = () => {
         }}
         >
             <div className="absolute left-0 -top-[12%]">
-                <Image
+                <OptimizedImage
                     src="/bg-khana1.svg"
                     alt="Decorative food illustration"
                     width={300}
@@ -26,7 +26,7 @@ const Home1 = () => {
             </div>
 
              <div className="absolute right-0 bottom-[0%]">
-                <Image
+                <OptimizedImage
                     src="/bg-khana2.svg"
                     alt="Decorative food illustration"
                     width={300}
@@ -43,7 +43,7 @@ const Home1 = () => {
 
 
                 <div className="absolute left-[10%] -top-[15%]">
-                    <Image
+                    <OptimizedImage
                         src="/khana1.svg"
                         alt="Food illustration"
                         width={200}
@@ -63,7 +63,7 @@ const Home1 = () => {
 
                 }}
                 >
-                    <Image
+                    <OptimizedImage
                         src="/khana2.svg"
                         alt="Food illustration"
                         width={200}
