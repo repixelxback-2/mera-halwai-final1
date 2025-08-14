@@ -61,8 +61,8 @@ const Home2 = () => {
             <Image
                     src="/mobile-app.jpg"
                     alt="hero"
-                    width={100}
-                    height={100}
+                    width={1000}
+                    height={1000}
                     className='h-full w-full'
                 />
                 <div className="w-full absolute justify-center flex bottom-12">
