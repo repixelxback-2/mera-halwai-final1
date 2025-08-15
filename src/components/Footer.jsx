@@ -62,7 +62,7 @@ const Footer = () => {
                                     </div>
                                     <div className="flex flex-col gap-3 font-normal">
                                         <Link className='cursor-pointer' href="/">Home</Link>
-                                        <Link className='cursor-pointer' href="https://wa.me/917300321034">Contact</Link>
+                                        <Link className='cursor-pointer' href="/contact">Contact</Link>
                                         <Link className='cursor-pointer' href="/about">About</Link>
                                         <Link className='cursor-pointer' href="/privacy">Privacy Policy</Link>
                                         <Link className='cursor-pointer' href="/terms">Terms & Condition</Link>
@@ -79,8 +79,8 @@ const Footer = () => {
                                         Contact With Us
                                     </div>
                                     <div className="flex flex-col gap-3 font-normal">
-                                        <Link href="/">Email{": merahalwai.com@gmail.com "} </Link>
-                                        <Link href="/">{"Contact No: +917300321034"}</Link>
+                                        <Link href="/">Email{': merahalwai.com@gmail.com '} </Link>
+                                        <Link href="/">{'Contact No: +917300321034'}</Link>
 
 
                                     </div>

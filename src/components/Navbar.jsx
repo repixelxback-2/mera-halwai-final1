@@ -18,11 +18,10 @@ const Navbar = () => {
 
   const menuItems = [
     { icon: Home, label: 'Home', href: '/' },
-
     { icon: User, label: 'About Us', href: '/about' },
     { icon: HelpCircle, label: 'Help', href: 'https://wa.me/917300321034' },
     { icon: Store, label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform', highlighted: true },
-    { icon: Mail, label: 'Contact Us', href: 'https://wa.me/917300321034' },
+    { icon: Mail, label: 'Contact Us', href: '/contact' },
   ]
 
   const footerLinks = [
@@ -86,7 +85,7 @@ const Navbar = () => {
                 Become a Vendor
               </div>
             </Link>
-            <Link href="https://wa.me/917300321034">
+            <Link href="/contact">
               <div
                 style={{
                   padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
@@ -204,9 +203,18 @@ const Navbar = () => {
 
             {/* Footer */}
             <div className="pt-6 border-t border-white/20">
-             
-
-             
+              <div className="flex justify-between">
+                {footerLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
