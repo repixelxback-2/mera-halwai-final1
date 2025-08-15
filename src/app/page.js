@@ -27,7 +27,7 @@ const Home = () => (
     <Navbar />
     <Home1 />
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="up" distance={20} duration={0.8} delay={0}>
+      <ScrollReveal direction="up" distance={50} duration={0.8} delay={0.1}>
         <Home2 />
       </ScrollReveal>
     </Suspense>
