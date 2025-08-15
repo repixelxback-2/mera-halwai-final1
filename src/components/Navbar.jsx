@@ -21,7 +21,7 @@ const Navbar = () => {
 
     { icon: User, label: 'About Us', href: '/about' },
     { icon: HelpCircle, label: 'Help', href: 'https://wa.me/917300321034' },
-    { icon: Store, label: 'Become a Vendor', href: 'https://wa.me/917300321034', highlighted: true },
+    { icon: Store, label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform', highlighted: true },
     { icon: Mail, label: 'Contact Us', href: 'https://wa.me/917300321034' },
   ]
 
@@ -76,7 +76,7 @@ const Navbar = () => {
                 Help
               </div>
             </Link>
-            <Link href="https://wa.me/917300321034">
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform">
               <div
                 style={{
                   padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
