@@ -27,7 +27,7 @@ const Home = () => (
     <Navbar />
     <Home1 />
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="up" distance={20} duration={0.5} delay={0}>
+      <ScrollReveal direction="up" distance={20} duration={0.8} delay={0}>
         <Home2 />
       </ScrollReveal>
     </Suspense>
@@ -35,29 +35,25 @@ const Home = () => (
         <Home3 />
     </Suspense>
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="left" distance={50} duration={0.1} delay={0}>
+      <ScrollReveal direction="left" distance={50} duration={0.8} delay={0}>
         <Home5 />
       </ScrollReveal>
     </Suspense>
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="up" distance={50} duration={0.5} delay={0}>
+      <ScrollReveal direction="up" distance={50} duration={0.8} delay={0}>
         <Home6 />
       </ScrollReveal>
     </Suspense>
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="right" distance={50} duration={0.5} delay={0}>
+      <ScrollReveal direction="right" distance={50} duration={0.8} delay={0}>
         <Home7 />
       </ScrollReveal>
     </Suspense>
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="up" distance={30} duration={0.5} delay={0}>
         <Strips />
-      </ScrollReveal>
     </Suspense>
     <Suspense fallback={<LoadingFallback />}>
-      <ScrollReveal direction="left" distance={50} duration={0.5} delay={0}>
         <Home8 />
-      </ScrollReveal>
     </Suspense>
     <Footer />
   </div>

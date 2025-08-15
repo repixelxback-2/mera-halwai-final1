@@ -43,8 +43,8 @@ const About = () => {
                     </ScrollReveal>
                 </div>
 
-                <ScrollReveal direction="left" distance={40} duration={0.8} delay={0.4}>
-                    <div className="w-[70%] md:w-[30%]">
+                <ScrollReveal direction="left" className='w-[70%] md:w-[30%]' distance={40} duration={0.8} delay={0.4}>
+                    <div className="w-full">
                         <Image
                             src="/sir.webp"
                             alt="about"
@@ -67,12 +67,12 @@ const About = () => {
                                 padding: "clamp(3em,3vw,300rem) clamp(2em,3vw,300rem)" 
                             }}
                         >
-                            <ScrollReveal direction="right" distance={30} duration={0.6} delay={0.8}>
+                            <ScrollReveal  className='w-full  flex flex-col justify-between items-center md:items-end' direction="right" distance={30} duration={0.6} delay={0.8}>
                                 <div className="text-white md:text-right text-sm sm:text-lg md:text-xl max-w-[70%]">
                                     To become India's most trusted and comprehensive catering network—empowering hosts to celebrate effortlessly and allowing halwais to flourish across every neighborhood.
                                 </div>
                             </ScrollReveal>
-                            <ScrollReveal direction="up" distance={20} duration={0.6} delay={1}>
+                            <ScrollReveal className='w-full' direction="up" distance={20} duration={0.6} delay={1}>
                                 <div className="text-5xl w-full sm:text-5xl leading-snug md:text-6xl pixel text-right text-[#EB8B23]">
                                     Vision
                                 </div>
@@ -84,12 +84,12 @@ const About = () => {
                                 padding: "clamp(3em,3vw,300rem) clamp(2em,3vw,300rem)"
                             }}
                         >
-                            <ScrollReveal direction="left" distance={30} duration={0.6} delay={0.8}>
+                            <ScrollReveal direction="left" className='w-full flex flex-col justify-between items-center md:items-start' distance={30} duration={0.6} delay={0.8}>
                                 <div className="text-white text-left text-sm sm:text-lg md:text-xl max-w-[70%]">
                                     To simplify event catering by offering a seamless platform that matches customers with trusted local halwai vendors, ensuring memorable experiences tailored to every budget and taste.
                                 </div>
                             </ScrollReveal>
-                            <ScrollReveal direction="up" distance={20} duration={0.6} delay={1}>
+                            <ScrollReveal className='w-full' direction="up" distance={20} duration={0.6} delay={1}>
                                 <div className="text-5xl w-full sm:text-5xl leading-snug md:text-6xl pixel text-right md:text-left text-[#8A3E1D]">
                                     Mission
                                 </div>

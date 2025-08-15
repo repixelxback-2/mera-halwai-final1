@@ -29,7 +29,7 @@ export const useScrollReveal = (options = {}) => {
     delay = 0,
     ease = 'power4.out',
     opacity = 0,
-    trigger = 'bottom 60%' // Changed to trigger when element is 40% in viewport
+    trigger = 'top 80%' // Changed to trigger when element is 40% in viewport
   } = options;
 
   useEffect(() => {
