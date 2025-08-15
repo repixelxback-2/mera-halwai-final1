@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Home8 = () => {
     return (
-        <div className='w-full h-full flex md:flex-row flex-col justify-center'
+        <div id="become-vendor" className='w-full h-full flex md:flex-row flex-col justify-center'
             style={{
                 padding: "clamp(1rem,5vw,200rem)"
 

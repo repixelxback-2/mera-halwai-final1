@@ -4,9 +4,11 @@ import { AlignJustify, Menu, X, User, HelpCircle, Store, Mail, ChevronRight, Hom
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const router = useRouter()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -15,12 +17,32 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
+  
+  const scrollToVendor = (e) => {
+    e.preventDefault()
+    // Close menu if it's open
+    if (isMenuOpen) {
+      closeMenu()
+    }
+    
+    // Check if we're on the home page
+    if (window.location.pathname !== '/') {
+      // Navigate to home page with the hash
+      router.push('/#become-vendor')
+    } else {
+      // We're already on the home page, just scroll to the element
+      const element = document.getElementById('become-vendor')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
 
   const menuItems = [
     { icon: Home, label: 'Home', href: '/' },
     { icon: User, label: 'About Us', href: '/about' },
     { icon: HelpCircle, label: 'Help', href: 'https://wa.me/917300321034' },
-    { icon: Store, label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform', highlighted: true },
+    { icon: Store, label: 'Become a Vendor', href: '/#become-vendor', highlighted: true },
     { icon: Mail, label: 'Contact Us', href: '/contact' },
   ]
 
@@ -75,7 +97,7 @@ const Navbar = () => {
                 About
               </div>
             </Link>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform">
+            <a href="/#become-vendor" onClick={scrollToVendor}>
               <div
                 style={{
                   padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
@@ -84,7 +106,7 @@ const Navbar = () => {
               >
                 Become a Vendor
               </div>
-            </Link>
+            </a>
             <Link href="/contact">
               <div
                 style={{
@@ -165,11 +187,22 @@ const Navbar = () => {
               >
                 {menuItems.map((item, index) => {
                   const Icon = item.icon;
-                  return (
-                    <Link
-                      href={item.href}
+                  const isVendorItem = item.label === 'Become a Vendor';
+                  const ItemTag = isVendorItem ? 'a' : Link;
+                  const itemProps = isVendorItem ? {
+                    href: item.href,
+                    onClick: (e) => {
+                      scrollToVendor(e);
+                    }
+                  } : {
+                    href: item.href,
+                    onClick: closeMenu
+                  };
+                  
+                  return ( 
+                    <ItemTag
                       key={item.label}
-                      onClick={closeMenu}
+                      {...itemProps}
                       className={`group relative flex items-center justify-between p-4  transition-all duration-200 cursor-pointer transform hover:scale-[1.02] hover:shadow-lg ${item.highlighted
                           ? 'bg-white text-[#EC8A25] shadow-md hover:shadow-xl'
                           : 'text-white hover:bg-white/20 hover:backdrop-blur-sm'
@@ -195,7 +228,7 @@ const Navbar = () => {
                       </div>
                       <ChevronRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${item.highlighted ? 'text-[#EC8A25]/70' : 'text-white/60'
                         }`} />
-                    </Link>
+                    </ItemTag>
                   );
                 })}
               </nav>

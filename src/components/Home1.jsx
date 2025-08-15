@@ -59,7 +59,7 @@ const Home1 = () => {
 
                 <div className="absolute rounded-b-full overflow-hidden"
                 style={{
-                    bottom: 'clamp(16rem,12vw,100rem)',
+                    bottom: 'clamp(10rem,1OFFvw,100rem)',
                     right: "clamp(0.0001rem,6vw,100rem)"
 
                 }}
