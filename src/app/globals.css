@@ -24,6 +24,22 @@
   100% { transform: rotate(12deg); }
 }
 
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .swing {
   animation: rotateSwing 0.5s infinite steps(1);
 }
