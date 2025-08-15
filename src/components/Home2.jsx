@@ -59,7 +59,7 @@ const Home2 = () => {
             }}
             >
             <Image
-                    src="/mobile-app.webp"
+                    src="/mobile-app.jpg"
                     alt="hero"
                     width={2000}
                     height={2000}
