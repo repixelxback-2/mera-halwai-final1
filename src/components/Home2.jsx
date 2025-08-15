@@ -47,8 +47,8 @@ const Home2 = () => {
                 <Image
                     src="/mp.png"
                     alt="hero"
-                    width={400}
-                    height={400}
+                    width={1000}
+                    height={1000}
                     className='h-full absolute right-0 w-auto'
                 />
             </div>
@@ -65,9 +65,7 @@ const Home2 = () => {
                     height={2000}
                     className='h-full w-full'
                 />
-                <div className="w-full absolute justify-center flex bottom-12">
-                    <Button text={"Get Started"} bgcolor={"#8A3E1D"} />
-                </div>
+    
                 </div>
 
         </div>

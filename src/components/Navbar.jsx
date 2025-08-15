@@ -55,6 +55,16 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link href="/">
+              <div
+                style={{
+                  padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
+                }}
+                className="text-[#8A3E1D] hover:text-[#6B2F15] transition-colors cursor-pointer text-base xl:text-lg font-medium"
+              >
+                Home
+              </div>
+            </Link>
             <Link href="/about">
               <div
                 style={{
@@ -62,17 +72,7 @@ const Navbar = () => {
                 }}
                 className="text-[#8A3E1D] hover:text-[#6B2F15] transition-colors cursor-pointer text-base xl:text-lg font-medium"
               >
-                About Us
-              </div>
-            </Link>
-            <Link href="https://wa.me/917300321034">
-              <div
-                style={{
-                  padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
-                }}
-                className="text-[#8A3E1D] hover:text-[#6B2F15] transition-colors cursor-pointer text-base xl:text-lg font-medium"
-              >
-                Help
+                About
               </div>
             </Link>
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdrkAxeKr0yKNhzOgFUkxM1Ykj6SLDun52Uz4qQSuz2dEFv5g/viewform">

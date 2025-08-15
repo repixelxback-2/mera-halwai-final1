@@ -106,14 +106,7 @@ const Home1 = () => {
 </div>
                 <Available />
 
-                <div className="border-4  border-[#EC8A25]  rounded-full"
-            style={{
-                padding: 'clamp(0.5rem,0.5vw,200rem)',
-            }}
-            >
-
-                <ChevronDown color='#EC8A25' size={40}/>
-            </div>
+            
             </div>
             
 
