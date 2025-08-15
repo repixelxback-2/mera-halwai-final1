@@ -69,7 +69,7 @@ const Home1 = () => {
                         alt="Food illustration"
                         width={200}
                         height={200}
-                        className='float'
+                        className='float2'
                         loading="eager"
                         style={{
                             width: 'clamp(5rem,11vw,200rem)',
