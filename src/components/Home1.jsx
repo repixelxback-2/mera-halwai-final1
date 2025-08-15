@@ -65,7 +65,7 @@ const Home1 = () => {
                 }}
                 >
                     <OptimizedImage
-                        src="/khana2.webp"
+                        src="/khana2.png"
                         alt="Food illustration"
                         width={200}
                         height={200}

@@ -85,31 +85,19 @@ const Footer = () => {
 
                                     </div>
 
-                                    <div className="flex items-center gap-3">
-                                       
+                                    <div className="items-center flex gap-3">
+
+                                       <div className="flex">Follow us  on</div>
                                         <Link href={"https://www.instagram.com/merahalwai?igsh=ZmRuMDJ5b2Rpb2gw"} className='h-full'>
                                         <Image
                                             src="/socials/insta.svg"
                                             width={100}
                                             height={100}
                                             alt='hey'
-                                            className='w-10 h-full'
+                                            className='w-12  h-full'
                                         />
                                         </Link>
-                                        <Image
-                                            src="/socials/fb.svg"
-                                            width={100}
-                                            height={100}
-                                            alt='hey'
-                                            className='w-fit h-full'
-                                        />
-                                        <Image
-                                            src="/socials/x.svg"
-                                            width={100}
-                                            height={100}
-                                            alt='hey'
-                                            className='w-fit h-full'
-                                        />
+                                    
 
                                     </div>
 

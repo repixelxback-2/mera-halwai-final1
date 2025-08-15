@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import LoadingProvider from "@/components/LoadingProvider";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -77,7 +78,9 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-white antialiased`}
       >
-        {children}
+        <LoadingProvider>
+          {children}
+        </LoadingProvider>
       </body>
     </html>
   );

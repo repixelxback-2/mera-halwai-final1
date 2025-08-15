@@ -4,18 +4,26 @@ import { useState, useEffect } from 'react';
 import Preloader from './Preloader';
 
 export default function LoadingProvider({ children }) {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setTimeout(() => setShowContent(true), 500);
+    }, 3000);
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
-  return loading ? <Preloader /> : children;
+  return (
+    <div className="relative w-full min-h-screen overflow-hidden">
+      <Preloader isLoading={isLoading} />
+      <div
+        className={`transition-opacity duration-500 ease-in-out ${showContent ? 'opacity-100' : 'opacity-0'}`}
+      >
+        {children}
+      </div>
+    </div>
+  );
 }
