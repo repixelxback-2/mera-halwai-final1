@@ -34,12 +34,12 @@ const Privacy = () => {
                         <div className="mb-8 bg-[#FFF9F0] rounded-xl shadow-sm" style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
                             <h3 className="text-lg md:text-xl pixel text-[#EB8B23] mb-3">Personal Data</h3>
                             <p className="mb-4">While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-                            <ul className="list-disc pl-8 mb-4 space-y-2">
-                                <li>Email address</li>
-                                <li>First name and last name</li>
-                                <li>Phone number</li>
-                                <li>Address, State, Province, ZIP/Postal code, City</li>
-                                <li>Usage Data</li>
+                            <ul className=" pl-8 mb-4 space-y-2">
+                                <li>→ Email address</li>
+                                <li>→ First name and last name</li>
+                                <li>→ Phone number</li>
+                                <li>→ Address, State, Province, ZIP/Postal code, City</li>
+                                <li>→ Usage Data</li>
                             </ul>
                         </div>
                     </ScrollReveal>
@@ -58,12 +58,12 @@ const Privacy = () => {
                         <div className="mb-8 bg-[#FFF9F0] rounded-xl shadow-sm" style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
                             <h3 className="text-lg md:text-xl pixel text-[#EB8B23] mb-3">Information from Third-Party Social Media Services</h3>
                             <p className="mb-4">The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</p>
-                            <ul className="list-disc pl-8 mb-4 space-y-2">
-                                <li>Google</li>
-                                <li>Facebook</li>
-                                <li>Instagram</li>
-                                <li>Twitter</li>
-                                <li>LinkedIn</li>
+                            <ul className=" pl-8 mb-4 space-y-2">
+                                <li>→ Google</li>
+                                <li>→ Facebook</li>
+                                <li>→ Instagram</li>
+                                <li>→ Twitter</li>
+                                <li>→ LinkedIn</li>
                             </ul>
                             <p className="mb-4">If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.</p>
                             <p className="mb-4">You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
@@ -74,10 +74,10 @@ const Privacy = () => {
                         <div className="mb-8 bg-[#FFF9F0] rounded-xl shadow-sm" style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
                             <h3 className="text-lg md:text-xl pixel text-[#EB8B23] mb-3">Information Collected while Using the Application</h3>
                             <p className="mb-4">While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:</p>
-                            <ul className="list-disc pl-8 mb-4 space-y-2">
-                                <li>Information regarding your location</li>
-                                <li>Information from your Device's phone book (contacts list)</li>
-                                <li>Pictures and other information from your Device's camera and photo library</li>
+                            <ul className=" pl-8 mb-4 space-y-2">
+                                <li>→ Information regarding your location</li>
+                                <li>→ Information from your Device's phone book (contacts list)</li>
+                                <li>→ Pictures and other information from your Device's camera and photo library</li>
                             </ul>
                             <p className="mb-4">We use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.</p>
                             <p className="mb-4">You can enable or disable access to this information at any time, through Your Device settings.</p>
@@ -88,9 +88,9 @@ const Privacy = () => {
                         <div className="mb-8 bg-[#FFF9F0] rounded-xl shadow-sm" style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
                             <h3 className="text-lg md:text-xl pixel text-[#EB8B23] mb-3">Use of Your Personal Data</h3>
                             <p className="mb-4">The Company may use Personal Data for the following purposes:</p>
-                            <ul className="list-disc pl-8 mb-4 space-y-2">
-                                <li>To provide and maintain our Service, including to monitor the usage of our Service.</li>
-                                <li>To manage Your Account: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</li>
+                            <ul className=" pl-8 mb-4 space-y-2">
+                                <li> → To provide and maintain our Service, including to monitor the usage of our Service.</li>
+                                <li>→ To manage Your Account: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</li>
                             </ul>
                         </div>
                     </ScrollReveal>
