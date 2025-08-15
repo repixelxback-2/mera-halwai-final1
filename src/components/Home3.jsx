@@ -45,66 +45,85 @@ const Home3 = () => {
     const stickyRef = useRef(null)
     const [currentDetail, setCurrentDetail] = useState(0)
 
-    useEffect(() => {
-        const originalBodyOverflow = document.body.style.overflow
-        const originalHtmlOverflow = document.documentElement.style.overflowX
-        
-        document.body.style.overflowX = 'hidden'
-        document.documentElement.style.overflowX = 'hidden'
+ useEffect(() => {
+    const originalBodyOverflow = document.body.style.overflow
+    const originalHtmlOverflow = document.documentElement.style.overflowX
+    
+    document.body.style.overflowX = 'hidden'
+    document.documentElement.style.overflowX = 'hidden'
 
-        const container = containerRef.current
-        const sticky = stickyRef.current
+    const container = containerRef.current
+    const sticky = stickyRef.current
 
-        if (!container || !sticky) return
+    if (!container || !sticky) return
 
+    ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === container) {
+            trigger.kill()
+        }
+    })
+
+    const createScrollTrigger = () => {
+        ScrollTrigger.create({
+            trigger: container,
+            start: "top top",
+            end: "bottom bottom",
+            pin: sticky,
+            pinSpacing: false,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+                const progress = self.progress
+                
+                // Add debugging
+                console.log('Progress:', progress)
+                
+                let newIndex
+                if (progress <= 0.1) { // Give more room for the first item
+                    newIndex = 0
+                } else if (progress >= 0.9) { // Give more room for the last item
+                    newIndex = Details.length - 1
+                } else {
+                    // Divide the remaining progress (0.1 to 0.9) among middle items
+                    const adjustedProgress = (progress - 0.1) / 0.8
+                    newIndex = Math.round(adjustedProgress * (Details.length - 2)) + 1
+                }
+
+                console.log('New index:', newIndex)
+
+                // Use callback form to avoid stale closure
+                setCurrentDetail(prev => {
+                    console.log('Previous detail:', prev, 'New index:', newIndex)
+                    if (newIndex !== prev) {
+                        console.log('Updating to index:', newIndex)
+                        return newIndex
+                    }
+                    return prev
+                })
+            },
+            onRefresh: () => {
+                document.body.style.overflowX = 'hidden'
+                document.documentElement.style.overflowX = 'hidden'
+            }
+        })
+    }
+
+    const timeoutId = setTimeout(() => {
+        createScrollTrigger()
+        ScrollTrigger.refresh()
+    }, 100)
+
+    return () => {
+        clearTimeout(timeoutId)
         ScrollTrigger.getAll().forEach(trigger => {
             if (trigger.vars.trigger === container) {
                 trigger.kill()
             }
         })
-
-        const createScrollTrigger = () => {
-            ScrollTrigger.create({
-                trigger: container,
-                start: "top top",
-                end: "bottom bottom",
-                pin: sticky,
-                pinSpacing: false,
-                scrub: 1,
-                invalidateOnRefresh: true, // This helps with layout recalculations
-                onUpdate: (self) => {
-                    // Calculate which detail should be active based on scroll progress
-                    const progress = self.progress
-                    const newIndex = Math.min(Math.floor(progress * Details.length), Details.length - 1)
-
-                    if (newIndex !== currentDetail) {
-                        setCurrentDetail(newIndex)
-                    }
-                },
-                onRefresh: () => {
-                    document.body.style.overflowX = 'hidden'
-                    document.documentElement.style.overflowX = 'hidden'
-                }
-            })
-        }
-
-        const timeoutId = setTimeout(() => {
-            createScrollTrigger()
-            ScrollTrigger.refresh() // Force refresh after creation
-        }, 100)
-
-        return () => {
-            clearTimeout(timeoutId)
-            ScrollTrigger.getAll().forEach(trigger => {
-                if (trigger.vars.trigger === container) {
-                    trigger.kill()
-                }
-            })
-            // Restore original overflow values
-            document.body.style.overflow = originalBodyOverflow
-            document.documentElement.style.overflowX = originalHtmlOverflow
-        }
-    }, [])
+        document.body.style.overflow = originalBodyOverflow
+        document.documentElement.style.overflowX = originalHtmlOverflow
+    }
+}, []) // Remove currentDetail from dependencies
 
     // Animate detail changes
     useEffect(() => {
@@ -125,7 +144,7 @@ const Home3 = () => {
     return (
         <div
             ref={containerRef}
-            className='w-full h-full md:h-[400vh] relative overflow-x-hidden'
+            className='w-full h-full md:h-[450vh] relative overflow-x-hidden'
         >
             <div
                 ref={stickyRef}
