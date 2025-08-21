@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Popup from './Popup';
 
-const Button = ({text, bgcolor}) => {
+const Button = ({ text, bgcolor }) => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClick = () => {
+      setShowPopup(true);
+  };
+
   return (
-    <button
-      style={{ backgroundColor: bgcolor,
-        padding: 'clamp(0.5rem,0.5vw,200rem) clamp(0.5rem,1vw,200rem)',
+    <>
+      <button
+        style={{
+          backgroundColor: bgcolor,
+          padding: 'clamp(0.5rem,0.5vw,200rem) clamp(0.5rem,1vw,200rem)',
 
-       }}
-    className={` text-white inter text-xl sm:text-lg md:text-xl font-bold w-fit rounded-xl `}>{text}</button>
-  )
-}
+        }}
+        onClick={handleClick}
 
-export default Button
+        className={` text-white inter text-xl sm:text-lg md:text-xl font-bold w-fit rounded-xl `}>{text}</button>
+      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+    </>
+  );
+};
+
+export default Button;
