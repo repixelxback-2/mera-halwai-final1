@@ -32,7 +32,7 @@ const Home5 = () => {
                         />
                     </div>
                     <Image
-                        src="/a1.svg"
+                        src="/a11.svg"
                         alt="home3"
                         width={400}
                         height={400}

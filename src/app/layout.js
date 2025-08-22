@@ -34,9 +34,9 @@ const helvetica = localFont({
 });
 
 export const metadata = {
-  title: "Mera Halwai",
+  title: "Mera Halwai – Sweets & Catering Simplified",
   
-  description: "Mera Halwai - Become a vendor",
+  description: "Discover & book trusted halwais, sweets & catering for every occasion. Customizable menus, smart filters, flexible payments & live order tracking.",
 };
 export default function RootLayout({ children }) {
   return (

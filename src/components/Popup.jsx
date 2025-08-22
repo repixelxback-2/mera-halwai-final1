@@ -2,7 +2,7 @@ import React from 'react';
 
 const Popup = ({ onClose }) => {
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center text-white bg-opacity-50">
+        <div className="fixed inset-0 z-[9999] md:scale-125 flex items-center justify-center text-white bg-opacity-50">
             <div className="bg-[#EC8A25] flex flex-col gap-2 rounded-3xl shadow-xl shadow-black/40 text-center"
                 style={{
                     padding: "clamp(0.5rem,3vw,200rem)"
@@ -12,7 +12,7 @@ const Popup = ({ onClose }) => {
                  style={{
                     fontSize: "clamp(2rem,2vw,200rem)"
                 }}
-                className="text-4xl pixel ">Coming Soon</h2>
+                className="text-4xl pixel ">App Coming Soon</h2>
                 <button
                     onClick={onClose}
                     style={{
