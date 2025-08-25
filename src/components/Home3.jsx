@@ -144,11 +144,11 @@ const Home3 = () => {
     return (
         <div
             ref={containerRef}
-            className='w-full h-full md:h-[450vh] relative overflow-x-hidden'
+            className='w-full h-full xl:h-[450vh] relative overflow-x-hidden'
         >
             <div
                 ref={stickyRef}
-                className='w-full hidden h-screen md:flex justify-center items-start relative overflow-x-hidden'
+                className='w-full hidden h-screen xl:flex justify-center items-start relative overflow-x-hidden'
             >
                 {/* Background Image - Full container size */}
                 <div className="absolute inset-0 w-full h-full flex justify-center items-start overflow-hidden">
@@ -228,7 +228,7 @@ const Home3 = () => {
             </div>
 
             {/* Mobile View */}
-            <div className="flex w-full md:hidden relative h-fit overflow-x-hidden">
+            <div className="flex w-full xl:hidden relative h-fit overflow-x-hidden">
                 <div className="w-full bg-black py-20 flex justify-center">
                     <div 
                         className="absolute w-full h-full bg-cover z-10 opacity-30"
@@ -247,7 +247,7 @@ const Home3 = () => {
                             padding: "clamp(5rem,2vw,200rem) 0"
                         }}
                     >
-                        <div className="text-xl max-w-52 leading-snug sm:text-3xl md:text-3xl pixel md:text-left text-[#fff] text-center">
+                        <div className="text-xl w-[80%] leading-snug sm:text-3xl md:text-3xl pixel xl:text-left text-[#fff] text-center">
                             The Smarter Way to Sweeten Your Celebrations
                         </div>
 

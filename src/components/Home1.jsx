@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 
 const Home1 = () => {
     return (
-        <div className='w-full relative  md:h-[60vh] flex flex-col justify-center items-center'
+        <div className='w-full relative  xl:h-[60vh] flex flex-col justify-center items-center'
         style={{
               marginTop: 'clamp(3rem,3vw,200rem)',
         }}
@@ -38,7 +38,7 @@ const Home1 = () => {
                     }}
                 />
             </div>
-            <div className="flex relative flex-col items-center gap-7 w-[60%] md:w-[80%] h-fit ">
+            <div className="flex relative flex-col items-center gap-7 w-[60%] xl:w-[80%] h-fit ">
 
 
 
@@ -79,14 +79,14 @@ const Home1 = () => {
                 </div>
 
                 <div className="w-full">
-                    <div className="text-4xl  sm:text-5xl md:text-6xl pixel text-center text-[#8A3E1D]"
+                    <div className="text-4xl  sm:text-5xl xl:text-6xl pixel text-center text-[#8A3E1D]"
                     style={{
                         fontSize: "clamp(2.25rem,4vw,200rem)"
                     }}
                     >
                         Your Perfect Event,
                     </div>
-                    <div className="text-4xl sm:text-5xl md:text-6xl text-center pixel text-[#EC8A25]"
+                    <div className="text-4xl sm:text-5xl xl:text-6xl text-center pixel text-[#EC8A25]"
                      style={{
                         fontSize: "clamp(2.25rem,4vw,200rem)"
                     }}>
@@ -101,7 +101,7 @@ const Home1 = () => {
                 >
                     Seamless discovery of trusted vendors that match your taste, budget, and vibe.
                 </div>
-<div className="hidden md:block">
+<div className="hidden xl:block">
                 <Button text="Get Started" bgcolor="#EC8A25" />
 </div>
                 <Available />
