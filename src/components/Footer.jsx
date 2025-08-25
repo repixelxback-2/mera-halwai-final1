@@ -14,7 +14,7 @@ const Footer = () => {
                 className='w-40 h-full'
 
             />
-            <div className="bg-gradient-to-l overflow-hidden relative from-[#8A3E1D] to-[#EC8A25] w-full rounded-t-4xl md:rounded-t-[13rem] h-full md:h-[7 0vh]">
+            <div className="bg-gradient-to-l overflow-hidden relative from-[#8A3E1D] to-[#EC8A25] w-full rounded-t-4xl  xl:rounded-t-[8rem]  2xl:rounded-t-[13rem]  h-full md:h-[70vh]">
                 <Image
                     src="/chai.svg"
                     width={100}
@@ -29,7 +29,7 @@ const Footer = () => {
                     }}
 
                 >
-                    <div className="text-2xl sm:text-3xl leading-snug md:text-5xl pixel text-center md:text-left text-[#ffffff]"
+                    <div className="text-2xl sm:text-3xl leading-snug md:text-5xl pixel text-center xl:text-left text-[#ffffff]"
 
                     style={{
                         fontSize: "clamp(1.75rem,2.85vw,200rem)"

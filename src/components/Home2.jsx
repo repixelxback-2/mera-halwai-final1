@@ -5,7 +5,7 @@ import Button from './Button'
 
 const Home2 = () => {
     return (
-        <div className='w-full flex justify-end items-center h-fit flex-col md:h-[80vh] xl:h-[100vh] min-h-[80vh]  '>
+        <div className='w-full flex justify-end items-center flex-col 2xl:h-[80vh] h-fit md:min-h-[80vh] '>
 
             <div className="w-[90%] xl:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
                 <div className="flex flex-col justify-between"
@@ -52,9 +52,10 @@ const Home2 = () => {
                     className='h-full absolute right-0 w-auto'
                 />
             </div>
-            <div className=" xl:hidden relative h-full  flex w-[98%]"
+            <div className="xl:hidden relative  flex w-[98%] h-fit"
             style={{
                 padding: "clamp(0.5rem,3vw,200rem)"
+
             }}
             >
             <Image
@@ -62,7 +63,7 @@ const Home2 = () => {
                     alt="hero"
                     width={2000}
                     height={2000}
-                    className='h-full w-full'
+                    className='h-auto w-full'
                 />
     
                 </div>

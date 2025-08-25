@@ -24,21 +24,21 @@ const Home7 = () => {
                 <div className="w-full justify-center grid grid-row-3 md:grid-cols-3 items-center gap-5 relative h-full ">
 
                     <Image
-                        src="/c1.svg"
+                        src="/c1.png"
                         alt="home3"
                         width={400}
                         height={400}
                         className='w-96 md:w-full  relative z-20 shadow-2xl   shadow-black/20  rounded-4xl h-full'
                     />
                     <Image
-                        src="/c2.svg"
+                        src="/c2.png"
                         alt="hme3"
                         width={400}
                         height={400}
                         className='w-full relative z-20  shadow-2xl shadow-black/20  rounded-4xl h-full'
                     />
                     <Image
-                        src="/c3.svg"
+                        src="/c3.png"
                         alt="home3"
                         width={400}
                         height={400}
