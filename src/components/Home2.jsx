@@ -16,7 +16,7 @@ const Home2 = () => {
                 >
 
 
-                    <div className="text-[#fff] text-center md:text-left text-xl inter font-medium">
+                    <div className="text-[#fff] 2xl:translate-y-5 text-center md:text-left text-xl inter font-medium">
                         What is Mera Halwai
                     </div>
                     <div className="text-2xl sm:text-3xl leading-snug md:text-4xl pixel text-center md:text-left text-[#fff]"
@@ -24,7 +24,7 @@ const Home2 = () => {
                         The Smarter Way to{","} <br /> Sweeten Your Celebrations
                     </div>
 
-
+<div className="flex flex-col gap-4">
                     <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
                         Mera Halwai is a smart platform that connects you with trusted sweet shops and catering vendors for any event.
                     </div>
@@ -38,14 +38,14 @@ const Home2 = () => {
                     <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
                         Track your orders live and enjoy doorstep delivery—all with just a few taps.
                     </div>
-
+                    </div>
                     <Available />
 
                     <Button text={"Get Started"} bgcolor={"#8A3E1D"} />
 
                 </div>
                 <Image
-                    src="/mp.png"
+                    src="/mpp.png"
                     alt="hero"
                     width={1000}
                     height={1000}
