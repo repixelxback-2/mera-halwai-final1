@@ -8,7 +8,7 @@ const Home1 = () => {
     return (
         <div className='w-full relative  xl:h-[60vh] flex flex-col justify-center items-center'
         style={{
-              margin: 'clamp(3rem,3vw,200rem) 0',
+              marginTop: 'clamp(3rem,3vw,200rem) 0',
         }}
         >
             <div className="absolute left-0 -top-[12%]">

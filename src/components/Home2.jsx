@@ -5,7 +5,19 @@ import Button from './Button'
 
 const Home2 = () => {
     return (
-        <div className='w-full flex justify-end items-center flex-col 2xl:h-[80vh] h-fit md:min-h-[80vh] '>
+        <div className='w-full flex justify-end relative items-center flex-col 2xl:h-[80vh] h-fit md:min-h-[90vh] pt-[10vh] '
+        style={{
+            paddingTop: "clamp(0.5rem,5vw,200rem)"
+        }
+        }
+        >
+            <Image
+                src="/food.png"
+                alt="hero"
+                width={1000}
+                height={1000}
+                className='absolute top-0 left-5 w-52 h-auto'
+            />
 
             <div className="w-[90%] xl:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
                 <div className="flex flex-col justify-between"
@@ -24,20 +36,20 @@ const Home2 = () => {
                         The Smarter Way to{","} <br /> Sweeten Your Celebrations
                     </div>
 
-<div className="flex flex-col gap-4">
-                    <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
-                        Mera Halwai is a smart platform that connects you with trusted sweet shops and catering vendors for any event.
-                    </div>
+                    <div className="flex flex-col gap-4">
+                        <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
+                            Mera Halwai is a smart platform that connects you with trusted sweet shops and catering vendors for any event.
+                        </div>
 
 
-                    <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
-                        Whether you're planning a wedding, festival, or house party, we help you find the perfect match based on your needs and budget
-                    </div>
+                        <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
+                            Whether you're planning a wedding, festival, or house party, we help you find the perfect match based on your needs and budget
+                        </div>
 
 
-                    <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
-                        Track your orders live and enjoy doorstep delivery—all with just a few taps.
-                    </div>
+                        <div className="text-[#fff] max-w-md text-left text-md inter font-semibold">
+                            Track your orders live and enjoy doorstep delivery—all with just a few taps.
+                        </div>
                     </div>
                     <Available />
 
@@ -53,20 +65,20 @@ const Home2 = () => {
                 />
             </div>
             <div className="xl:hidden relative  flex w-[98%] h-fit"
-            style={{
-                padding: "clamp(0.5rem,3vw,200rem)"
+                style={{
+                    padding: "clamp(0.5rem,3vw,200rem)"
 
-            }}
+                }}
             >
-            <Image
+                <Image
                     src="/mobile-app.jpg"
                     alt="hero"
                     width={2000}
                     height={2000}
                     className='h-auto w-full'
                 />
-    
-                </div>
+
+            </div>
 
         </div>
     )
