@@ -21,14 +21,14 @@ const Home7 = () => {
                 </div>
 
 
-                <div className="w-full justify-center grid grid-row-3 xl:grid-cols-3 items-center gap-5 relative h-full ">
+                <div className="w-full justify-center flex flex-col 2xl:flex-row  items-center gap-5 relative h-full ">
 
                     <Image
                         src="/c1.png"
                         alt="home3"
                         width={400}
                         height={400}
-                        className='w-full xl:w-full  relative z-20 shadow-2xl   shadow-black/20  rounded-4xl h-full'
+                        className='w-full relative z-20 shadow-2xl   shadow-black/20  rounded-4xl h-full'
                     />
                     <Image
                         src="/c2.png"

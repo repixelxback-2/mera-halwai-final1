@@ -77,12 +77,12 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <Link href="/">
+          <Link href="/">
               <div
                 style={{
-                  padding: 'clamp(0.4rem,0.8vw,1rem) clamp(0.8rem,1.2vw,1.5rem)'
+                  padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
                 }}
-                className="text-[#8A3E1D] hover:text-[#6B2F15] transition-colors cursor-pointer text-base xl:text-lg font-medium"
+                className="bg-[#F1EDE2] hover:bg-[#E8E1D1] text-[#8A3E1D] font-semibold rounded-xl cursor-pointer text-base xl:text-lg transition-colors"
               >
                 Home
               </div>
@@ -118,6 +118,16 @@ const Navbar = () => {
               </div>
             </Link>
         
+            <Link href="/terms">
+              <div
+                style={{
+                  padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
+                }}
+                className="bg-[#F1EDE2] hover:bg-[#E8E1D1] text-[#8A3E1D] font-semibold rounded-xl cursor-pointer text-base xl:text-lg transition-colors"
+              >
+                terms & conditions
+              </div>
+            </Link>
           
           </div>
 
