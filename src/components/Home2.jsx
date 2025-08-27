@@ -5,22 +5,23 @@ import Button from './Button'
 
 const Home2 = () => {
     return (
-        <div className='w-full flex justify-end relative items-center flex-col 2xl:h-[80vh] h-fit md:min-h-[90vh] pt-[10vh] '
+        <div className="w-full h-full relative"
         style={{
-            paddingTop: "clamp(0.5rem,5vw,200rem)"
-        }
-        }
+            paddingTop: "clamp(0.5rem,8vh,200rem)"
+        }}
+        >
+        <div className='w-full flex justify-end items-center flex-col 2xl:h-[80vh] xl:h-[85vh] h-fit md:min-h-[80vh] '
+       
         >
             <Image
                 src="/food.png"
                 alt="hero"
                 width={1000}
                 height={1000}
-                className='absolute top-0 left-5 w-52 h-auto'
+                className='h-52 hidden xl:block absolute top-0 left-9 w-auto'
             />
-
-            <div className="w-[90%] xl:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
-                <div className="flex flex-col justify-between"
+            <div className="w-[85%] xl:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
+                <div className="flex flex-col justify-between relative z-50"
                     style={{
                         padding: "clamp(0.5rem,3vw,200rem) 0 clamp(0.5rem,3vw,200rem) clamp(0.5rem,6vw,200rem) "
 
@@ -79,7 +80,7 @@ const Home2 = () => {
                 />
 
             </div>
-
+            </div>
         </div>
     )
 }
