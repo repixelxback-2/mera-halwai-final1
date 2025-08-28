@@ -1,9 +1,21 @@
-'use client';
-
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import React from 'react'
+
+export const metadata = {
+  title: "Contact Us - Mera Halwai",
+  description: "Get in touch with Mera Halwai for support, partnerships, or inquiries. Find our contact information, address, and ways to reach our customer service team.",
+  keywords: ["contact mera halwai", "customer support", "get in touch", "help center", "contact information"],
+  openGraph: {
+    title: "Contact Us - Mera Halwai", 
+    description: "Get in touch with Mera Halwai for support, partnerships, or inquiries.",
+    url: "https://merahalwai.com/contact",
+  },
+  alternates: {
+    canonical: "https://merahalwai.com/contact",
+  },
+};
 
 const page = () => {
   return (

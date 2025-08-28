@@ -1,21 +1,21 @@
-'use client';
+import AboutPageClient from './AboutPageClient'
 
-import About from '@/components/About'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
-import React from 'react'
-import { ScrollReveal } from '@/utils/scrollAnimations'
+export const metadata = {
+  title: "About Us - Mera Halwai",
+  description: "Learn about Mera Halwai's mission to connect customers with trusted halwais and catering services. Discover our story, values, and commitment to quality sweets and catering.",
+  keywords: ["about mera halwai", "our story", "halwai platform", "catering services", "company mission"],
+  openGraph: {
+    title: "About Us - Mera Halwai",
+    description: "Learn about Mera Halwai's mission to connect customers with trusted halwais and catering services.",
+    url: "https://merahalwai.com/about",
+  },
+  alternates: {
+    canonical: "https://merahalwai.com/about",
+  },
+};
 
 const page = () => {
-  return (
-    <div className='w-full h-full'>
-        <Navbar/>
-        <ScrollReveal direction="up" distance={50} duration={0.8} delay={0.2}>
-          <About/>
-        </ScrollReveal>
-        <Footer/>
-    </div>
-  )
+  return <AboutPageClient />
 }
 
 export default page
