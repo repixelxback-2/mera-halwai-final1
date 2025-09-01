@@ -20,7 +20,7 @@ const Home2 = () => {
                 height={1000}
                 className='h-52 hidden xl:block absolute top-0 left-9 w-auto'
             />
-            <div className="w-[85%] xl:flex relative h-full hidden justify-between rounded-4xl bg-[#EC8A25]">
+            <div className="w-[85%] xl:flex relative h-full hidden justify-between rounded-4xl xl:rounded-[2.5vw] bg-[#EC8A25]">
                 <div className="flex flex-col justify-between relative z-50"
                     style={{
                         padding: "clamp(0.5rem,3vw,200rem) 0 clamp(0.5rem,3vw,200rem) clamp(0.5rem,6vw,200rem) "

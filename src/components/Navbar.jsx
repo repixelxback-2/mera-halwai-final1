@@ -117,17 +117,7 @@ const Navbar = () => {
                 Contact Us
               </div>
             </Link>
-        
-            <Link href="/terms">
-              <div
-                style={{
-                  padding: 'clamp(0.25rem,0.25vw,1rem) clamp(0.8rem,0.75vw,1.5rem)'
-                }}
-                className="bg-[#F1EDE2] hover:bg-[#E8E1D1] text-[#8A3E1D] font-semibold rounded-xl cursor-pointer text-base xl:text-lg transition-colors"
-              >
-                terms & conditions
-              </div>
-            </Link>
+      
           
           </div>
 

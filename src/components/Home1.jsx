@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 
 const Home1 = () => {
     return (
-        <div className='w-full relative  xl:h-[60vh] flex flex-col justify-center items-center'
+        <div className='w-full relative h-[80vh]  xl:h-[60vh] flex flex-col justify-center items-center'
         style={{
               marginTop: 'clamp(3rem,3vw,200rem) 0',
         }}
